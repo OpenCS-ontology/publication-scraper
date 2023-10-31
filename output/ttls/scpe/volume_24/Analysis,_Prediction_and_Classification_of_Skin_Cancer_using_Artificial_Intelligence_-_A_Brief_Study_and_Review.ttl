@@ -1,0 +1,64 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Algorithmic based detection"^^xsd:string,
+        "Artificial intelligence"^^xsd:string,
+        "Deep learning"^^xsd:string,
+        "Skin cancer"^^xsd:string,
+        "dermatologist"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1 ] ;
+    dc:title "Analysis, Prediction and Classification of Skin Cancer using Artificial Intelligence - A Brief Study and Review"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "World Health Organization (WHO) records that skin cancer has vigorously affected people in recent decades. Worldwide, many people are affected by skin cancer, and its affected count will increase yearly. Hence, skin cancer has become a threatening disease. Skin cancer prediction at an earlier time is becoming the higher priority and most challenging task worldwide. A computer-based diagnosis is needed to perform the automatic prognosis of skin cancer. It assists dermatologists in many ways, including the prediction of skin cancer at the earlier stages, easy to diagnose and effective. Nowadays, artificial intelligence based machine learning approaches have been implemented for an early prediction of cancer in the skin through medical images. This paper is focused on a detailed, comprehensive review of skin cancer analysis, forecast, and algorithmic-based procedures for classifying skin diseases. Moreover, this review paper focused on various stages of algorithm approaches for skin tumor detection like pre-processing data, segmenting data, feature selection, and disease classifier. This detailed review of neoplasm diseases like cancer on the skin is done based on machine and deep learning algorithms to help further research."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 370 ;
+    prism:pageCount 15 ;
+    prism:startingPage 355 ;
+    datacite:doi "10.12694/scpe.v24i3.2241"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2241"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2241> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Pandala"^^xsd:string ;
+    foaf:givenName "Madhavi Latha"^^xsd:string ;
+    foaf:name "Madhavi Latha Pandala"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "S. Periyanayagi"^^xsd:string ;
+    foaf:name " S. Periyanayagi"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "School of Computing Science and Engineering, VIT Bhopal University, Kothrikalan, Bhopal- Indore Highway, Madhya Pradesh, India"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

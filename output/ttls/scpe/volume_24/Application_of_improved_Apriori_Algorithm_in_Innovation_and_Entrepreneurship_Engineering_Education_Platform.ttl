@@ -1,0 +1,87 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Apriori algorithm"^^xsd:string,
+        "Engineering education platform"^^xsd:string,
+        "association rules"^^xsd:string,
+        "data mining"^^xsd:string,
+        "innovation and entrepreneurship practice"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2 ] ;
+    dc:title "Application of improved Apriori Algorithm in Innovation and Entrepreneurship Engineering Education Platform"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The implementation of innovation and entrepreneurship education is inseparable from professional education, so it is important for the rich data in the education platform to mine the connection between professional courses and between grades and courses. The study of association rule algorithm based on education data mining improves the time performance efficiency and accuracy of Apriori algorithm. The study improves the time efficiencies of Apriori algorithm by maintaining Map table and splitting transaction database; the accuracy is improved by using mixed criteria to measure the accuracy and filtering deformation rules based on the inference of confidence. The results of the validation of the time efficiency of the algorithm show that the running time of the improved algorithm in solving frequent itemsets is improved by about 93.86%, 92.48% and 92.76%, respectively, compared with the other three algorithms. The running time of the algorithm for generating frequent itemsets of all orders is about 91.35 ms, which is 66.13% and 83.72% better than the Apriori algorithm and AprioriTid algorithm, respectively. The mining results of student examination data based on the education platform are reasonable and practical, which are of good practical significance for the innovation and entrepreneurship engineering education platform to develop training plans and improve teaching quality.is assumed."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 620 ;
+    prism:pageCount 11 ;
+    prism:startingPage 609 ;
+    datacite:doi "10.12694/scpe.v24i3.2307"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2307"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2307> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Wu"^^xsd:string ;
+    foaf:givenName "Xuanyuan"^^xsd:string ;
+    foaf:name "Xuanyuan Wu"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Liu"^^xsd:string ;
+    foaf:givenName "Anhua"^^xsd:string ;
+    foaf:name "Anhua Liu"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    pro:holdsRoleInTime :role_2_0 ;
+    foaf:familyName "Xiao"^^xsd:string ;
+    foaf:givenName "Yi"^^xsd:string ;
+    foaf:name "Yi Xiao"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Basic Department, Hunan Communication Polytechnic, Changsha, 410132, China"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "College of Continuing Education, Hunan Vocational College of Science and Technology, Changsha, 410004, China"^^xsd:string .
+
+:org_2_0 a frapo:Organization ;
+    foaf:name "Modern Education Technology Center, Hunan Communication Polytechnic, Changsha, 410132, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:role_2_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_2_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

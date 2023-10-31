@@ -1,0 +1,59 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "ABC algorithm"^^xsd:string,
+        "Artificial fish school algorithm"^^xsd:string,
+        "Cold chain low-carbon logistics"^^xsd:string,
+        "Genetic algorithm"^^xsd:string,
+        "Path optimization"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "Application of Improving ABC in Cold Chain Low Carbon Logistics Path Planning"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The market has set higher efficiency and environmental requirements for cold chain logistics, and path planning plays an important role. This study proposes a low-carbon cold chain logistics path planning model based on an improved artificial bee colony algorithm (this paragraph refers to ”fusion algorithm”). The study first establishes the fusion algorithm. Then, in response to the shortcomings of this algorithm, the artificial fish swarm algorithm and genetic algorithm are used to improve it. The final results express that the shortest distance for solving Eil51 using this algorithm is 421.38, the longest distance is 448.58, and the average distance is 439.34; The shortest distance for solving Ulysses22 is 72.46, the longest distance is 73.63, and the average distance is 72.84. The average convergence times for Eil51 and Ulysses22 are 133.57 and 7.86, and the optimal performance ratios for relative error are 0.0076 and 0.0051. The robust performance ratios are 0.0362 and 0.0117. The optimal total cost solution and the average value for solving the relevant distribution problem are 47,894.6 yuan and 48,562.7 yuan, respectively. In summary, the model proposed in the study has good application effects in cold chain low-carbon logistics path planning, and has a certain promoting effect on the development of cold chain logistics."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 240 ;
+    prism:pageCount 11 ;
+    prism:startingPage 229 ;
+    datacite:doi "10.12694/scpe.v24i3.2357"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2357"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2357> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Bai"^^xsd:string ;
+    foaf:givenName "Xiazu"^^xsd:string ;
+    foaf:name "Xiazu Bai"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "College of International Business, Lanzhou Petrochemical University of Vocational Technology, Lanzhou 730070, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

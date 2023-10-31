@@ -1,0 +1,47 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1 ] ;
+    dc:title "Selecting representatives"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue """We use representatives to reduce complexity in many areas of life.\r
+Clusters are often replaced with their centre, and then these representatives are used to classify new objects.\r
+If the objects are described as a vector of real numbers, then the centre can be easily calculated.\r
+However, this method is unusable if only a similarity relation is given instead of coordinates of the object or the distances between the objects.\r
+Google can filter and rank relevant pages for a particular question; and here we follow a similar approach.\r
+The difference is that we have an undirected graph while the PageRank algorithm uses a directed one.\r
+In this article we show what conditions we set for our own ranking system. Following the description of the details of this method we demonstrate that it satisfies our criteria and how it selects the (mathematically proven) most typical elements of each cluster.\r
+Finally, we apply this method on several partitions of the natural numbers and on non-transitive tolerance relations to present the representatives of the numbers."""^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 6 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F95"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/95.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/95.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "12th International Workshop on Computational Optimization"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Nagy"^^xsd:string ;
+    foaf:givenName "Dávid"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Aszalós"^^xsd:string ;
+    foaf:givenName "László"^^xsd:string .
+

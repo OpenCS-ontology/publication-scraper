@@ -1,0 +1,59 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Internet of Things"^^xsd:string,
+        "cost"^^xsd:string,
+        "dynamic demand"^^xsd:string,
+        "path optimization"^^xsd:string,
+        "time windows"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "Time Window Oriented IoT Vehicle Pathway Study for the Dynamically Changing Needs of E-Commerce Customers"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The main dynamic truck routing problem also presents a significant difficulty in the logistics sector, which is an unavoidable development trend of the contemporary technological changing society. A dynamic vehicle routing problem with time window model is suggested by the study in order to establish an effective and low-energy dynamic response method. The fundamental concept is to disrupt the conventional strategy of static dynamic consumers responding in time slots by dividing the dynamic time window into a static time window with several time slice intervals. The study makes use of cutting-edge ideas including dynamic attitude, before-and-after time slicing, and continuous optimisation while proposing a new method for model solution to optimise dynamic vehicle route issues effectively and affordably. The study employs the Solomon optimisation dataset and runs simulation studies on the Java platform to confirm its efficacy. The experimental findings demonstrated that the optimisation technique employed in the study reduced the cost of travelling by 83.8 miles while also considerably increasing the average vehicle utilisation by 3.6%. Because driving distance cost and vehicle number cost are typically positively connected with dynamic attitude, the study employs solutions that can increase dynamic response efficiency and save money. As a result, their robustness is higher."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 255 ;
+    prism:pageCount 14 ;
+    prism:startingPage 241 ;
+    datacite:doi "10.12694/scpe.v24i3.2372"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2372"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2372> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Chen"^^xsd:string ;
+    foaf:givenName "Xin"^^xsd:string ;
+    foaf:name "Xin Chen"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Information Engineering College, Xinxiang Vocational and Technical College, Xinxiang, 453000, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

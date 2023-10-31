@@ -1,0 +1,45 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2 ] ;
+    dc:title "Efficient Production Monitoring on the Basis of Domain Ontologies by Utilizing IoT"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The Internet-of-Things (IoT) technologies and cyber-physical systems has facilitated production monitoring and control. However, researches and applications still lack a standardized framework and an integrated technological solution that can maximize the leverage of real-time monitoring. This can be achieved through enabling data transfer and exchange between all entities/organizations in supply chains and accordingly utilizing the monitored data. This paper introduces a framework for production monitoring that utilizes and integrates ontological model, which implements and integrates Semantic Sensor Network (SSN) ontology with production monitoring services. In addition, Complex Event Processing is integrated in the proposed model to enable event patterns identification and undertake the appropriate (pro-active) action accordingly. The framework is constructed based on ISA-95 and SCOR standards. The utility, applicability and efficacy of the proposed framework is validated by its application on a real-life large-scale case study in the domain of laser cutting machines."^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 7 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F228"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/228.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/228.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "17th Conference on Advanced Information Technologies for Management"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Riad"^^xsd:string ;
+    foaf:givenName "Maha"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Elzanfaly"^^xsd:string ;
+    foaf:givenName "Doaa"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    foaf:familyName "Elgammal"^^xsd:string ;
+    foaf:givenName "Amal"^^xsd:string .
+

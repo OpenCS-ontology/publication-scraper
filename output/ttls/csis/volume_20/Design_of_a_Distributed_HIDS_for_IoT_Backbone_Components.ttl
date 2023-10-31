@@ -1,0 +1,75 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2,
+                :author_3,
+                :author_4,
+                :author_5,
+                :author_6,
+                :author_7,
+                :author_8 ] ;
+    dc:title "Design of a Distributed HIDS for IoT Backbone Components"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Nowadays DDoS attacks using IoT devices are frequent and exten-sive. Given that IoT network instances are distributed and deployedover conventional Internet gear, DDoS countermeasures in IoT needto be fully distributed and coordinated allover the components thatform each IoT instance. This paper presents a designed and proto-typed distributed host-based intrusion detection systems (HIDS)that aims to protect the components of IoT network backbones,comprising conventional switches and routers. In our design, a setof the proposed HIDS executes conventional security verifications,like default username and password, known attacks signatures,monitoring the usage of resources, processes, ports and open con-nections, while also interacting with a Controller of the HIDS setto allow the coordination of intrusion detection actions relativeto DDoS attacks allover the IoT instance.The designed distributedHIDS is evaluated in a controlled environment that, although beinga local and isolated network, realistically represents IoT networkinstances."^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 7 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F329"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/329.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/329.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "3rd Workshop on Internet of Things - Enablers, Challenges and Applications"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Alencastro"^^xsd:string ;
+    foaf:givenName "João F. de"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Albuquerque"^^xsd:string ;
+    foaf:givenName "Robson de O."^^xsd:string .
+
+:author_2 a foaf:Person ;
+    foaf:familyName "Kfouri"^^xsd:string ;
+    foaf:givenName "Guilherme de O."^^xsd:string .
+
+:author_3 a foaf:Person ;
+    foaf:familyName "Gonçalves"^^xsd:string ;
+    foaf:givenName "Daniel G. V."^^xsd:string .
+
+:author_4 a foaf:Person ;
+    foaf:familyName "Martins"^^xsd:string ;
+    foaf:givenName "Lucas M. C. e"^^xsd:string .
+
+:author_5 a foaf:Person ;
+    foaf:familyName "Praciano"^^xsd:string ;
+    foaf:givenName "Bruno J. G."^^xsd:string .
+
+:author_6 a foaf:Person ;
+    foaf:familyName "Jr"^^xsd:string ;
+    foaf:givenName "Rafael T. de Sousa"^^xsd:string .
+
+:author_7 a foaf:Person ;
+    foaf:familyName "Filho"^^xsd:string ;
+    foaf:givenName "Francisco L. de Caldas"^^xsd:string .
+
+:author_8 a foaf:Person ;
+    foaf:familyName "Dutra"^^xsd:string ;
+    foaf:givenName "Bruno V."^^xsd:string .
+

@@ -1,0 +1,59 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Audience"^^xsd:string,
+        "Computerized analysis"^^xsd:string,
+        "Facial expression"^^xsd:string,
+        "emotions and behaviours"^^xsd:string,
+        "sentiment analysis techniques"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "Analyzing Spectator Emotions and Behaviors at Live Sporting Events using Computer Vision and Sentiment Analysis Techniques"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "It makes the reflection of humans’ emotions and intentions from watching live sports events. Watching the event keeps people entertained and changes their mindset from being stressed to joyful. Watching sports events encourages the athletes and the sports persons to participate. Reflection of the live sports event consists of many crowds as the event’s audience. This crowd’s emotions and intentions directly impact the changes in the event’s performance. It provides positive energy to the demotivated sports participants, making them perform better in the event. This study reflects the understanding of the facial emotions of the spectators from the live event. Then, they are decoded in the computer programming language, and an outcome is provided. It understands the emotions and sentiments of the people that affect the event’s environment. The representation by the computer analysis makes the understanding of the changes provided by the spectators of the live event. The effect of the audience’s emotions and behaviors in the crowd are computed by the utilization of computer software analysis and the effect of those reactions in the event. The collection of data is taken from the secondary sources of data collection, including the collection of information from the article and the journal based on the topic. The gathered data is analyzed by comparing them with their reaction and expressions in the live sports event."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 486 ;
+    prism:pageCount 11 ;
+    prism:startingPage 475 ;
+    datacite:doi "10.12694/scpe.v24i3.2342"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2342"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2342> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Xu"^^xsd:string ;
+    foaf:givenName "Yang"^^xsd:string ;
+    foaf:name "Yang Xu"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "School of Physical Education, University of Sanya, Sanya, 572000 China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

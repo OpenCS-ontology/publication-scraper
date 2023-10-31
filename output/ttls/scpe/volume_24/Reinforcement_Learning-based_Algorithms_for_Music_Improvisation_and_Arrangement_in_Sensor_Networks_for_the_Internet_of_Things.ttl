@@ -1,0 +1,58 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Learning-Based Algorithms"^^xsd:string,
+        "Machine Learning"^^xsd:string,
+        "Music Improvisation"^^xsd:string,
+        "Sensor Networks"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "Reinforcement Learning-based Algorithms for Music Improvisation and Arrangement in Sensor Networks for the Internet of Things"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The process of learning any new technology requires acquiring the best knowledge about the information of that technology. The better the knowledge humans get about digital technology, the more they become efficient in implementing technological development. In developing the musical rhythm and tuning, the application of programming technologies helps improve the quality. In constructing networking sites and sensing technologies, algorithmic learning processes help in effective development. This development occurs by making the systematic process of transforming a data processing language and data interpreter. Thus, it helps in performing programming effectively in the present as well as future purposes. Therefore, it reflects all the benefits of machine learning. Thus, the preference for machine learning increases technological impact. This development of the programming used in the computer makes humans learn about something easily and get the best information. The effectiveness of the technological development by the algorithm used in the data processing implements the best way to improve the technological language transformation from human language to computer operating language. There is a transnational perspective of the average beat commonness of each part of the music. “Reinforcement algorithms-based learning” incorporated with sensor networks has proposed compelling opportunities for improving “music improvisation” and interpretation."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 510 ;
+    prism:pageCount 11 ;
+    prism:startingPage 499 ;
+    datacite:doi "10.12694/scpe.v24i3.2390"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2390"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2390> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Hu"^^xsd:string ;
+    foaf:givenName "Xiaoling"^^xsd:string ;
+    foaf:name "Xiaoling Hu"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Public Discipline Department, Nanchang Medical College, Nanchang, 333000, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

@@ -1,0 +1,70 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Natural Language Processing"^^xsd:string,
+        "aspect-based sentiment analysis"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1 ] ;
+    dc:title "Improving Bert Model Accuracy for Uni-modal Aspect-Based Sentiment Analysis Task"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Techniques and methods for examining users’ feelings, emotions, and views in text or other media are known as ”sentiment analysis,” this phrase is used frequently. In many areas, including marketing and online social media, analysis of user and consumer opinions has always been essential to decision-making processes. The development of new methodologies that concentrate on analysing the sentiment associated with specific product characteristics, such as aspect-based sentiment analysis (ABSA), was prompted by the need for a deeper understanding of these opinions. Despite the growing interest in this field, some misunderstanding exists about ABSA’s core ideas. Even though sentiment, affect, emotion, and opinion refer to various ideas, they are frequently used synonymously. This ambiguity commonly causes user opinions to be analysed incorrectly. This work provides an overview of ABSA and the issue of overfitting. Following this analysis, we improved the model by enhancing the accuracy and F1 score of the existing model by fine-tuning the technique. Our model outperformed the others, achieving the best results for the restaurant dataset with an 85.02 accuracy and a 79.19 F1 score, respectively."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 286 ;
+    prism:pageCount 9 ;
+    prism:startingPage 277 ;
+    datacite:doi "10.12694/scpe.v24i3.2444"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2444"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2444> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Chauhan"^^xsd:string ;
+    foaf:givenName "Amit"^^xsd:string ;
+    foaf:name "Amit Chauhan"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Mohana"^^xsd:string ;
+    foaf:givenName "Rajni"^^xsd:string ;
+    foaf:name "Rajni Mohana"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Jaypee University of Information Technology, Waknaghat Solan, Himachal Pradesh, India"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "Jaypee University of Information Technology, Waknaghat Solan, Himachal Pradesh, India "^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

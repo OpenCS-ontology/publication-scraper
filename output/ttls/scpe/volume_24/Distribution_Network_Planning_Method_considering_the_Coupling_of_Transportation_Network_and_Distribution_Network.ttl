@@ -1,0 +1,100 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "distribution network coupling"^^xsd:string,
+        "linear programming"^^xsd:string,
+        "planning methods"^^xsd:string,
+        "transportation networks"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2,
+                :author_3 ] ;
+    dc:title "Distribution Network Planning Method considering the Coupling of Transportation Network and Distribution Network"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "This paper introduces a novel distribution network planning method that addresses the limitations of conventional approaches. The existing methods primarily focus on optimizing component objectives using reliability analysis, which results in inadequate operational power control performance due to neglecting the coupling degree analysis of distribution network subprojects. To overcome this limitation, the proposed method incorporates the coupling of the traffic and distribution networks into the planning process. The method involves modeling the transportation network and analyzing the coupling characteristics of the planning items. Specifically, the energy efficiency coupling degree is calculated to assess the degree of coupling. Based on this analysis, the planning nodes are strategically deployed, and a comprehensive planning model is constructed. The model is then subjected to constraints and solved to obtain an optimal distribution network planning scheme. To evaluate the effectiveness of the proposed method, experiments are conducted to assess its operational power control capability. The experimental results demonstrate that when the proposed method is employed for distribution network planning, it reduces operating power and achieves a more desirable planning outcome. The novelty of this work lies in integrating the coupling analysis of the traffic network and the distribution network into the planning process. Considering the interdependencies between these networks, the proposed method enables a more comprehensive and efficient distribution network planning scheme. This approach enhances operational power control performance and improves the overall effectiveness of distribution network planning."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 438 ;
+    prism:pageCount 9 ;
+    prism:startingPage 429 ;
+    datacite:doi "10.12694/scpe.v24i3.2288"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2288"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2288> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Lu"^^xsd:string ;
+    foaf:givenName "Sichen"^^xsd:string ;
+    foaf:name "Sichen Lu"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Li"^^xsd:string ;
+    foaf:givenName "Jianfeng"^^xsd:string ;
+    foaf:name "Jianfeng Li"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    pro:holdsRoleInTime :role_2_0 ;
+    foaf:familyName "Song"^^xsd:string ;
+    foaf:givenName "Zhuoran"^^xsd:string ;
+    foaf:name "Zhuoran Song"^^xsd:string .
+
+:author_3 a foaf:Person ;
+    pro:holdsRoleInTime :role_3_0 ;
+    foaf:familyName "Jiang"^^xsd:string ;
+    foaf:givenName "Tao"^^xsd:string ;
+    foaf:name "Tao Jiang"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "State Grid Liaoning Electric Power Supply Co., Ltd, Shenyang, 110006, China"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "State Grid Liaoning Electric Power Supply Co., Ltd, Shenyang, 110006, China"^^xsd:string .
+
+:org_2_0 a frapo:Organization ;
+    foaf:name "State Grid Liaoning Electric Power Supply Co., Ltd,Shenyang,110006, China"^^xsd:string .
+
+:org_3_0 a frapo:Organization ;
+    foaf:name "State Grid Liaoning Electric Power Supply Co., Ltd, Shenyang,110006, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:role_2_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_2_0 ;
+    pro:withRole pro:author .
+
+:role_3_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_3_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

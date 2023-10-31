@@ -1,0 +1,50 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2,
+                :author_3 ] ;
+    dc:title "Comparative Analysis of Data Mining Algorithms Applied to the Context of School Dropout"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Students' dropout is certainly one of the major problems that afflict educational institutions, the losses caused by the student's abandonment are social, academic and economic waste. The quest for its causes has been subject of work and educational research around the world. Several organizations seek strategic decisions to control the dropout rate. This work's goal is to evaluate the effectiveness of the most used data mining algorithms in the education area. An``in vivo'' controlled experiment was planned and performed to compare the efficacy selected classifiers. The Random Forest and SVM algorithms have stood out in this context, having, statistically similar accuracy (80.36\\%, 81.18\\%), precision (80.79\\%, 80.25\\%), recall (76.50\\%, 77.51\\%) and f-measure (78.86\\%, 78.81\\%) averages. The results showed evidence of significant differences between the algorithms, and also showed that, although the SVM had the best metric of accuracy and recall, it results were statistically similar with Random Forest results."^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 7 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F265"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/265.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/265.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "14th International Symposium Advances in Artificial Intelligence and Applications"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Júnior"^^xsd:string ;
+    foaf:givenName "Methanias Colaço"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Silva"^^xsd:string ;
+    foaf:givenName "Victor Matheus da"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    foaf:familyName "Vasconcelos"^^xsd:string ;
+    foaf:givenName "Nathanael Oliveira"^^xsd:string .
+
+:author_3 a foaf:Person ;
+    foaf:familyName "Almeida"^^xsd:string ;
+    foaf:givenName "Thiago S."^^xsd:string .
+

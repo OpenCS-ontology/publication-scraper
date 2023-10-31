@@ -1,0 +1,75 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Access control"^^xsd:string,
+        "Cloud-based solutions"^^xsd:string,
+        "Confidentiality"^^xsd:string,
+        "Data security"^^xsd:string,
+        "Integrity"^^xsd:string,
+        "Intelligent transportation applications"^^xsd:string,
+        "Privacy protection"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1 ] ;
+    dc:title "Protecting Data and Privacy: Cloud-based Solutions for Intelligent Transportation Applications"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The interaction between transportation networks and intelligent transportation systems has been revolutionized by cloud computing. However, the reliance on cloud-based solutions raises security and privacy concerns. This article examines the challenges of safeguarding data and privacy in intelligent transportation applications and emphasizes the potential of cloud-based solutions to resolve these issues. Organizations can protect sensitive data and user privacy by employing encryption, access controls, threat detection mechanisms, and privacy protection measures. Adopting these cloud-based solutions will encourage the extensive adoption of intelligent transportation applications while infusing users and stakeholders with confidence."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 276 ;
+    prism:pageCount 19 ;
+    prism:startingPage 257 ;
+    datacite:doi "10.12694/scpe.v24i3.2381"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2381"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2381> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Singha"^^xsd:string ;
+    foaf:givenName "Ranjit"^^xsd:string ;
+    foaf:name "Ranjit Singha"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Singha"^^xsd:string ;
+    foaf:givenName "Surjit"^^xsd:string ;
+    foaf:name "Surjit Singha"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Christ University, Bengaluru, India"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "Kristu Jayanti College (Autonomous), Bengaluru, India"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

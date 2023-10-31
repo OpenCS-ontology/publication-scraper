@@ -1,0 +1,58 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Basic Facilities"^^xsd:string,
+        "Learning Environment"^^xsd:string,
+        "Online and Blended Learning"^^xsd:string,
+        "Scalable Computing"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "Scalable Computing Infrastructure for Online and Blended Learning Environments"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "With the growing popularity of online learning and blended learning, as well as the rapid development of cloud computing and big data technology, scalable computing infrastructure has become an indispensable part of building a modern education platform. Method: Five experiments were conducted to test the scalability and reliability of computing infrastructure based on online and blended learning environments. The experiments include the performance comparison of online learning platforms based on different virtualization technologies, the performance comparison of online and hybrid learning environments under different loads, the comparison of online learning experiences under different bandwidth constraints, the system stability test under different user numbers, and the comparison of access speeds in different regions. Result: The experimental results showed that on an online learning platform using the KVM (Kernel-based Virtual Machine) interface, when the number of concurrent users is 99, the response time is 100.9ms, and the CPU (Central Processing Unit) utilization rate is 60.9%. Under low load conditions, the concurrent access volume is 200; the response time is 50ms, and the throughput is 10.3. When accessing locally, the latency is 9.19ms; the download speed is 500.3KB/s; the network throughput is 399.8KB/s. Conclusion: Exploring the scalability, reliability, performance, stability, and access speed of online learning platforms is crucial for improving platform competitiveness and ensuring user experience."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 607 ;
+    prism:pageCount 10 ;
+    prism:startingPage 597 ;
+    datacite:doi "10.12694/scpe.v24i3.2293"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2293"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2293> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Xin"^^xsd:string ;
+    foaf:givenName "Liao"^^xsd:string ;
+    foaf:name "Liao Xin"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "JingdeZhen University, JingdeZhen, 333000, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

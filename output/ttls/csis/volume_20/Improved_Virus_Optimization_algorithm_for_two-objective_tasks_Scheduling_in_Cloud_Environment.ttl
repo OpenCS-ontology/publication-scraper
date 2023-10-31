@@ -1,0 +1,53 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2,
+                :author_3 ] ;
+    dc:title "Improved Virus Optimization algorithm for two-objective tasks Scheduling in Cloud Environment"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue """Cloud computing is increasingly recognized as a new way to use on-demand, computing, storage and network services in a transparent and efficient way. The development of applications in cloud environments is faced with the need to efficiently schedule a large number of tasks and resources.\r
+However, in the most of the time, the resources in cloud are not efficiently utilized due to inadequate scheduling task algorithm in virtual machines. Therefore, task scheduling is one of the most challenging issues in cloud computing. In this paper, we propose two-objective virus optimization algorithm of the\r
+makespan and the cost for mapping tasks to virtual machines in order to meet the needs of cloud service quality and proper assignment of resources. Thus based on genetic algorithm and some parameters of Virus optimization algorithm are redefined to strengthen sorting ability between virus infection strategies.\r
+Using CloudSim simulator, our combined methods aims to improve the performance of scheduling algorithms and outperforms the some existing approaches for task scheduling in Cloud computing."""^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 8 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F63"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/63.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/63.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "14th Conference on Information Systems Management"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Benhammadi"^^xsd:string ;
+    foaf:givenName "Farid"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Bey"^^xsd:string ;
+    foaf:givenName "Kadda Beghdad"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    foaf:familyName "Nacer"^^xsd:string ;
+    foaf:givenName "Hassina"^^xsd:string .
+
+:author_3 a foaf:Person ;
+    foaf:familyName "Bouznad"^^xsd:string ;
+    foaf:givenName "Sofiane"^^xsd:string .
+

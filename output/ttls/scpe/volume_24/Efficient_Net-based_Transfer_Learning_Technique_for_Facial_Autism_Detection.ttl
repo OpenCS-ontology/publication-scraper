@@ -1,0 +1,59 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Autism spectrum disorder"^^xsd:string,
+        "Convolutional Neural Network (CNN)"^^xsd:string,
+        "EfficientNet"^^xsd:string,
+        "Facial Images"^^xsd:string,
+        "Transfer Learning"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "Efficient Net-based Transfer Learning Technique for Facial Autism Detection"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Autism Spectrum Disorder is a neurological disorder in which an individual faces life-long effects in communication and interaction with others. Nowadays, the Autism Spectrum disorder ratio is increasing drastically more than ever before. Autism can be identified at all developmental levels as a ”behavioural condition,” and its symptoms often arise between the ages of two and four. The ASD issue starts during puberty and persists through adolescence and adulthood. Children with ASD use both nonverbal and verbal behaviour to communicate, and they struggle with joint attention and social reciprocity. Children with autism are frequently socially isolated as a result of these problems. Through very expensive and time-consuming screening exams, autism spectrum features can be identified. As one of the possible mirrors of the brain, children’s faces can be utilised as a biomarker and as a quick and convenient technique for the early identification of ASD. An effective, genuine, and automatic method of face-based spectrum disorder identification is required. In this study we compare the transfer learning approach used for autism identification with the convolutional neural network (CNN)-based efficient-net strategy to identify autistic children using facial images. We used an open-source Kaggle dataset and evaluated the model performance in terms of accuracy, confusion matrix, precision, recall, and F1 measure. Efficient shows an accuracy of 97% on the benchmark dataset and beats the baseline technique of transfer learning-based approaches. This study can be used to help medical professionals validate their initial screening procedures for finding youngsters with ASD disease."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 560 ;
+    prism:pageCount 9 ;
+    prism:startingPage 551 ;
+    datacite:doi "10.12694/scpe.v24i3.2233"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2233"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2233> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Saeed Mian"^^xsd:string ;
+    foaf:givenName "Tariq"^^xsd:string ;
+    foaf:name "Tariq Saeed Mian"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Department of IS, College of Computer Science and Engineering Taibah University, Madinah Almunwarah, Saudi Arabia"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

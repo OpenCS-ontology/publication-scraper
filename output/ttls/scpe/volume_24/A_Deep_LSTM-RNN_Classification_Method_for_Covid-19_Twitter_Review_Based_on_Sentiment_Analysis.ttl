@@ -1,0 +1,76 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword ""^^xsd:string,
+        "Covid-19"^^xsd:string,
+        "SentiWordNet"^^xsd:string,
+        "Sentiment Analysis"^^xsd:string,
+        "Twitter reviews"^^xsd:string,
+        "classification"^^xsd:string,
+        "deep learning"^^xsd:string,
+        "social networks"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1 ] ;
+    dc:title "A Deep LSTM-RNN Classification Method for Covid-19 Twitter Review Based on Sentiment Analysis"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "In today’s world, advanced internet technologies have significantly increased people’s affinity towards social networks to stay updated on current events and communicate with others residing in different cities. Social opinion analyses helped determine the optimal public health response during the COVID-19 pandemic. Analysis of articulating tweets from Twitter can reveal the public’s perceptions of social distance. Sentiment Analysis is used for classifying text data and analyzing people’s emotions. The proposed work uses LSTM-RNN with the SMOTE method for categorizing Twitter data. The suggested approach uses increased characteristics weighted by attention layers and an LSTM-RNN-based network as its foundation. This method computes the advantage of an improved information transformation framework through the attention mechanism compared to existing BI-LSTM and LSTM models. A combination of four publicly accessible class labels such as happy, sad, neutral, and angry, is analyzed. The message of tweets is analyzed for polarization and subjectivity using TextBlob, VADER (Valence Aware Dictionary for Sentiment Reasoning), and SentiWordNet. The model has been successfully built and evaluated using two feature extraction methods, TF-IDF (Term Frequency-Inverse Document Frequency) and Bag of Words (BoW). Compared to the previous methodologies, the suggested deep learning model improved considerably in performance measures, including accuracy, precision, and recall. This demonstrates how effective and practical the recommended deep learning strategy is and how simple it is to employ for sentiment categorization of COVID-19 reviews. The proposed method achieves 97% accuracy in classifying the text whereas, among existing Bi-LSTM, achieves 88% maximum in the text classification."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 326 ;
+    prism:pageCount 11 ;
+    prism:startingPage 315 ;
+    datacite:doi "10.12694/scpe.v24i3.2138"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2138"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2138> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Srikanth"^^xsd:string ;
+    foaf:givenName "Jatla"^^xsd:string ;
+    foaf:name "Jatla Srikanth"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Shanmugam"^^xsd:string ;
+    foaf:givenName "Avula Damodaram"^^xsd:string ;
+    foaf:name "Avula Damodaram Shanmugam"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Department of Computer Science and Engineering, Aurora’s Technological and Research Institute, Parvathapur, Uppal, Hyderabad, TS, India"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "School of Information Technology (SIT), JNTUH, Hyderabad, TS, India"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

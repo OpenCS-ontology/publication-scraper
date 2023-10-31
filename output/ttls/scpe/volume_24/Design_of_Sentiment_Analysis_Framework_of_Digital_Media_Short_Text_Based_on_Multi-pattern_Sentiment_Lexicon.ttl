@@ -1,0 +1,58 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Optimization learning"^^xsd:string,
+        "Semi-supervised learning"^^xsd:string,
+        "Sentiment analysis"^^xsd:string,
+        "Sentiment lexicon"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "Design of Sentiment Analysis Framework of Digital Media Short Text Based on Multi-pattern Sentiment Lexicon"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Along the continuous advancement of the network and the rise of digital media, the amount of data produced by the exponential explosion. And how to use these data to provide personalized services for users is one of the current research focuses. To address the issue of insufficient coverage in the current sentiment lexicon and the difficulty of constructing sentiment lexicon in specific fields, this study proposes a multi-modal emotional thesaurus. Semi-supervised learning is used to solve the problem of insufficient coverage of emotional thesaurus, and a semi-supervised classification algorithm is realized by using a large number of unlabeled sample data combined with a small number of labeled sample data. Optimized learning is used to solve the problem of difficult construction of emotional thesaurus in specific fields, the corresponding specific emotional thesaurus is constructed by adaptive adjustment of emotional word score, and finally the improved emotional thesaurus is used to build a digital media short text sentiment analysis framework. For testing, the NLPCC dataset was used in this study, Experiments show that the framework constructed in this study requires 87 iterations, a Recall value of 0.912, a F1 value of 0.753, and an average accuracy of 83.39%, all of which are better than the sentiment analysis framework without the use of multi-pattern sentiment lexicon. In the simulation experiment, the recognition accuracy reached 85.88%, which was 16.85%, 11.57% and 6.72% higher than the test scenarios using a single emotion thesaurus selected in this study. The above results show that the digital media short-text sentiment analysis framework built in this research based on multi-pattern sentiment lexicon can carry out short-text sentiment analysis more accurately and efficiently, so as to accurately analyze users’ needs and provide customized services precisely."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 298 ;
+    prism:pageCount 11 ;
+    prism:startingPage 287 ;
+    datacite:doi "10.12694/scpe.v24i3.2371"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2371"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2371> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Lin"^^xsd:string ;
+    foaf:givenName "Shuqin"^^xsd:string ;
+    foaf:name "Shuqin Lin"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "School of Arts & Communication, Xiamen Institute of Technology, Xiamen, 361021, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

@@ -1,0 +1,65 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Convolutional Neural Network"^^xsd:string,
+        "aspect level"^^xsd:string,
+        "aspect-based sentiment analysis"^^xsd:string,
+        "attention mechanism"^^xsd:string,
+        "big data"^^xsd:string,
+        "word2vec"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1 ] ;
+    dc:title "Aspect-based Text Classification for Sentimental Analysis using Attention mechanism with RU-BiLSTM"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Sentiment analysis has gained increasing attention from an educational and social perspective with the huge expansion of user interactions due to the Web’s significant improvement. The connection between an opinion target’s polarity scores and other aspects of the content is defined by aspect-based sentiment analysis. Identifying aspects and determining their different polarities is quite complicated because they are frequently implicit. To overcome these difficulties, efficient hybrid methods are used in aspect-based text classification in sentiment analysis. The existing process evaluates the aspects of polarity by using a Convolutional neural network, and it does not work with Big data. In this work, aspect-based text classification and attention mechanisms are used to assist in filtering out irrelevant information and quickly locating the essential features in big data. Initially, the data is collected, and then the data is preprocessed by using Tokenization, Stop word removal, Stemming, and Lemmatization. After preprocessing, the features are vectorized and extracted using Bag-of-Words and TF-IDF. Then, the extracted features are given into word embeddings by GloVe and Word2vec. It uses Deep Recurrent based Bidirectional Long Short Term Memory (RUBiLSTM) for aspect-based sentiment analysis. The RU-Bi-LSTM method integrates aspect-based embeddings and an attention mechanism for text classification. The attention mechanism focuses on more crucial aspects and the bidirectional LSTM to maintain context in both ways. Finally, the binary and ternary classification outcomes are obtained using the final dense softmax output layer. The proposed RU-BiLSTM uses four reviews and two Twitter datasets. The results of the studies demonstrate the efficacy of the RU-BiLSTM model, which outperformed aspect-based classifications on lengthy reviews and short tweets in terms of evaluation."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 314 ;
+    prism:pageCount 15 ;
+    prism:startingPage 299 ;
+    datacite:doi "10.12694/scpe.v24i3.2122"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2122"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2122> .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Nellore Geethanjali"^^xsd:string ;
+    foaf:name " Nellore Geethanjali"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Yelisetti"^^xsd:string ;
+    foaf:givenName "Sandeep"^^xsd:string ;
+    foaf:name "Sandeep Yelisetti"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "Department of Computer Science Technology, Sri Krishnadevaraya University, Ananthapuram, India"^^xsd:string .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

@@ -1,0 +1,57 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Clinical trials"^^xsd:string,
+        "Drug discovery"^^xsd:string,
+        "Electronic Health Records"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "Using Machine Learning Algorithms to Design Personalized Exercise Programs for Health and Wellness"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The research paper showcases an elaborate study of machine learning, which is used in healthcare or medical platforms and can be used by healthcare professionals to adopt better diagnostic instruments and tools for examining medical issues or images. The paper highlights that a machine learning algorithm can be utilized in X-rays or MRI scans to examine disease and health issues. This paper will also discuss how this algorithm can help healthcare professionals, doctors, and nurses make accurate diagnoses for better services and patient outcomes. One of the major advantages of using the secondary research method in the following research is the abundance of the literature. All the data being used here are previously collected and evaluated with the result, and using these will increase the impact of the study overall. This method saves resources, including money, time, and manpower. This research method allows the researcher to build new knowledge and draw new conclusions based on existing expertise and knowledge. The chosen research philosophy is the Interpretivism research philosophy. The chosen research approach here is the inductive research approach. The chosen research design for this study is exploratory. All these help the research to achieve its objectives and reach the proposed goal of this research."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 474 ;
+    prism:pageCount 11 ;
+    prism:startingPage 463 ;
+    datacite:doi "10.12694/scpe.v24i3.2340"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2340"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2340> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Lu"^^xsd:string ;
+    foaf:givenName "Yan"^^xsd:string ;
+    foaf:name "Yan Lu"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "School of Physical Education, University of Sanya, Sanya, Hainan, 572000 China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

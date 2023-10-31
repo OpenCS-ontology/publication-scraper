@@ -1,0 +1,95 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Accuracy"^^xsd:string,
+        "CNN"^^xsd:string,
+        "FL"^^xsd:string,
+        "ML"^^xsd:string,
+        "Security"^^xsd:string,
+        "Training"^^xsd:string,
+        "UAV"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2,
+                :author_3 ] ;
+    dc:title "Synchronous Federated Learning based Multi Unmanned Aerial Vehicles for Secure Applications"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Unmanned Aerial Vehicles (UAVs), also known as drones, have rapidly gained popularity due to their widely employed applications in various industries and fields, including search and rescue, agriculture, industry, military operations, safety, and more. Additionally, drones assist with tasks such as search and rescue efforts, pandemic virus containment, crisis management, and other critical operations. Due to their unique capabilities in image, video, and information collection, a multi-UAV system plays a crucial role in these activities. However, such images and video data involve individual privacy. Therefore, such multi-UAV applications have an indigenous tradeoff of privacy preservation. We have proposed a Federated Learning (FL) based approach for ensuring privacy in multi-UAV applications. The proposed methodology utilizes a synchronous FL approach and the Convolutional Neural Network (CNN) to ensure security. The model parameters are protected by using a secure aggregation. Results demonstrate that the proposed approach outperforms existing techniques in terms of accuracy and precision."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 201 ;
+    prism:pageCount 10 ;
+    prism:startingPage 191 ;
+    datacite:doi "10.12694/scpe.v24i3.2136"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2136"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2136> .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Askar"^^xsd:string ;
+    foaf:givenName "Shavan"^^xsd:string ;
+    foaf:name "Shavan Askar"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Mishra"^^xsd:string ;
+    foaf:givenName "Ashutosh"^^xsd:string ;
+    foaf:name "Ashutosh Mishra"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    pro:holdsRoleInTime :role_2_0 ;
+    foaf:familyName "Gupta"^^xsd:string ;
+    foaf:givenName "Sachin Kumar"^^xsd:string ;
+    foaf:name "Sachin Kumar Gupta"^^xsd:string .
+
+:author_3 a foaf:Person ;
+    pro:holdsRoleInTime :role_3_0 ;
+    foaf:familyName "Sharma"^^xsd:string ;
+    foaf:givenName "Itika"^^xsd:string ;
+    foaf:name "Itika Sharma"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "School of Integrated Technology, Yonsei, University, South Korea, and the Department of Electronics & Communication Engineering, Graphic Era Deemed to be University, Dehradun 248002, Uttarakhand, India "^^xsd:string .
+
+:org_2_0 a frapo:Organization ;
+    foaf:name "Department of Electronics and Communication Engineering, Central University of Jammu, Samba, UT of J&K, 181143 India and School of Electronics and Communication Engineering, Shri Mata Vaishno Devi University, Katra-182320, (UT of J&K), India"^^xsd:string .
+
+:org_3_0 a frapo:Organization ;
+    foaf:name "School of Electronics and Communication Engineering, Shri Mata Vaishno Devi University, Kakryal-182320, Katra, (Jammu and Kashmir), UT, India"^^xsd:string .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:role_2_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_2_0 ;
+    pro:withRole pro:author .
+
+:role_3_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_3_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

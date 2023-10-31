@@ -1,0 +1,35 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "A mixed-methods measurement and evaluation methodology for mobile application usability studies"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Low usability of mobile application is thought to diminish the perceived level of the quality by a user whose experiences substantially determines its market success or failure. However, while a single method of measurement employed to study usability may produce an unreliable or incomplete evaluation outcome, in this paper, contrarily we propose to take advantage of both qualitative and quantitative methods adequate to collect data, that would describe all usability attributes. In particular, in the scope of mobile application usability studies, this paper (i) depicts the main assumptions of elaborated M4MAUME methodology, (ii) describes the self-developed software tool (RVDA) for retrospective video data analysis, (iii) specifies the experimental setup, and (iv) discusses the preliminary results obtained from 20 experiments performed on four different groups of  mobile applications. Eventually our findings lead us to the conclusion that mixing different methods have produced reliable and valuable outcomes which may be used to improve and manage usability in current and future projects, as well as to enhance existing software quality assurance (SQA) programs."^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 5 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F299"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/299.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/299.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "17th Conference on Advanced Information Technologies for Management"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Weichbroth"^^xsd:string ;
+    foaf:givenName "Paweł"^^xsd:string .
+

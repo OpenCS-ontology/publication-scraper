@@ -1,0 +1,103 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Big data"^^xsd:string,
+        "IT in health care"^^xsd:string,
+        "Security"^^xsd:string,
+        "bibliometric analysis"^^xsd:string,
+        "decision support system"^^xsd:string,
+        "healthcare web application"^^xsd:string,
+        "machine learning application"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2,
+                :author_3 ] ;
+    dc:title "Big Data in Healthcare - A Comprehensive Bibliometric Analysis of Current Research Trends"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The primary purpose of this study is to perform a comprehensive bibliometric analysis of research landscape of big data in healthcare. Big data as a significant technology used in healthcare during the past decade has led to the exponential growth in scientific literature. This study is focused on analysis of many crucial bibliometric indicators such as, overall research output, author productivity, institutional productivity, country wise productivity, collaboration analysis, research trends along with a thematic focus of research output in big data and healthcare. The analysis has been performed on 2294 research articles published in 1018 publication sources from SCOPUS and Web of Science databases. The initial results of the study performed from year 2012 reveals that in the first year 6 research articles were published in the given domain. Then every year the growth of published articles in the field was exponential, however years 2019 to 2021 were the most productive and incremental in terms of number of publications. The analysis results of the study present the performance analysis of research production in terms of annual scientific production, most globally cited articles, author’s production over the time, most productive countries, and most relevant affiliations. In addition, the science mapping analysis including the indicators such as, keyword Co-occurrence, Thematic Mapping, Most Relevant Authors, annual source distribution, and collaboration Network analysis has been presented. The study delivers expedient contribution to the field of study by noticeably offering comprehensive analysis results regarding research hotspots and trends, thematic emphasis, and future direction of research in the field. These outcomes will aid researchers in big data and healthcare in planning and designing the research and the challenges and opportunities needed to be explored."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 549 ;
+    prism:pageCount 18 ;
+    prism:startingPage 531 ;
+    datacite:doi "10.12694/scpe.v24i3.2155"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2155"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2155> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Reshi"^^xsd:string ;
+    foaf:givenName "Aijaz"^^xsd:string ;
+    foaf:name "Aijaz Reshi"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Shafi"^^xsd:string ;
+    foaf:givenName "Shabana"^^xsd:string ;
+    foaf:name "Shabana Shafi"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    pro:holdsRoleInTime :role_2_0 ;
+    foaf:familyName "Qadri"^^xsd:string ;
+    foaf:givenName "Majid Hussain"^^xsd:string ;
+    foaf:name "Majid Hussain Qadri"^^xsd:string .
+
+:author_3 a foaf:Person ;
+    pro:holdsRoleInTime :role_3_0 ;
+    foaf:familyName "Shah"^^xsd:string ;
+    foaf:givenName "Arif"^^xsd:string ;
+    foaf:name "Arif Shah"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Department of Computer Science, College of  Computer Science and Engineering, Taibah University, Al Madinah, al Munawarah, Saudi Arabia"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "Department of Computer Science, College of Computer Science and Engineering, Taibah University, Al Madinah, al Munawarah, Saudi Arabia"^^xsd:string .
+
+:org_2_0 a frapo:Organization ;
+    foaf:name "Department of Management Studies, University of Kashmir, Jammu and Kashmir, India"^^xsd:string .
+
+:org_3_0 a frapo:Organization ;
+    foaf:name "Deparment of Management, OPJS University, Rajasthan, India"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:role_2_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_2_0 ;
+    pro:withRole pro:author .
+
+:role_3_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_3_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

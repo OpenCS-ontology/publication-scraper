@@ -1,0 +1,45 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2 ] ;
+    dc:title "Building a Clinical Case Reports Database to Facilitate Case-Based Learning and Improve Critical Thinking of Medical Students"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "This paper reports on development of our unified case reports database for medical students. The primary aim was to share professionals' clinical knowledge and skills through one of the most traditional medical experiences sharing form based on modern and anywhere available web services and technologies. Doing so, the clinical case reports that still play an invaluable role in case-based learning and in building of ability of students to think critically, can be used not only to learn and practice theoretical and practical consequences of clinicians' decisions, but also to prepare students for bedside teaching. To develop a generally acceptable system, we had to specify both the structure of education suitable materials and the platform for simple creation and sharing of such electronic outputs. As the result, the database of first clinical case reports was implemented into the information technologies infrastructure at Faculty of medicine in Kosice, Slovakia. It is offered to medical students in the form of web-based portal."^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 3 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F297"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/297.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/297.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "14th Conference on Information Systems Management"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Gonsorčík"^^xsd:string ;
+    foaf:givenName "Jozef"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Jarčuška"^^xsd:string ;
+    foaf:givenName "Peter"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    foaf:familyName "Majerník"^^xsd:string ;
+    foaf:givenName "Jaroslav"^^xsd:string .
+

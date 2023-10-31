@@ -1,0 +1,40 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1 ] ;
+    dc:title "A roadmap for a comparison framework for an adaptable software process improvement framework in small software companies"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Poor software quality due to failure to organize development processes using SPI is visible in small software companies, although these companies are significant to industry and world economy; the challenge of quality needs much more attention. The development of different frameworks to sort the development process in SSC continues to leave a lot to be desired. This work leads us to the development of a comparison framework which will ultimately end with an adaptable SPA and SPI framework for SSC. From a SLR to identify the factors affecting SSC and mapping them to the specific processes in which they occur, we analyze the software development environment and identify SPI frameworks that have registered success in similar environments of SSC to help us adopt best practices from which comparison is made to generate requirements for an adaptable SPI framework within context for small companies."^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 8 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F253"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/253.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/253.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "Joint 39th IEEE Software Engineering Workshop (SEW-39) and 6th International Workshop on Cyber-Physical Systems (IWCPS-6)"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Tuape"^^xsd:string ;
+    foaf:givenName "Micheal"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Ayalew"^^xsd:string ;
+    foaf:givenName "Yirsaw"^^xsd:string .
+

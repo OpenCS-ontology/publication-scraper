@@ -1,0 +1,87 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Ceramic sculpture"^^xsd:string,
+        "General layout"^^xsd:string,
+        "Landscape ceramics"^^xsd:string,
+        "Planning model"^^xsd:string,
+        "algorithm"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2 ] ;
+    dc:title "General Layout Planning Model of Landscape Ceramic Sculpture Based on NSGA - Ⅱ Algorithm"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The current overall layout planning model matrix of landscape ceramic sculpture is generally unidirectional, and the planning efficiency is low, resulting in a decline in the layout optimization ratio of the model. Therefore, the design and verification analysis of landscape ceramic sculpture’s overall layout planning model based on the Nondominated Sorting Genetic Algorithm (NSGA - II) algorithm is proposed. According to the actual planning needs and standards, first set the basic layout points, establish a cross-planning matrix in a multi-level manner, and improve the efficiency of the overall layout planning of the sculpture. The NSGA - II calculation landscape ceramic sculpture layout planning structure is constructed on this basis, and the model design is realized by level conversion. This novel NSGA-II with level conversion performs better layout planning when compared with other conventional models. The final test results show that through three stages of layout optimization processing, compared with the initial planning layout, the optimal layout optimization ratio for the setting of the plaza sculpture can reach more than 60%, indicating that with the help of this method, the layout planning of sculpture has been further improved, the space has been expanded, and has practical application value."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 378 ;
+    prism:pageCount 7 ;
+    prism:startingPage 371 ;
+    datacite:doi "10.12694/scpe.v24i3.2273"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2273"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2273> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Feng"^^xsd:string ;
+    foaf:givenName "Henan"^^xsd:string ;
+    foaf:name "Henan Feng"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Zheng"^^xsd:string ;
+    foaf:givenName "Liqun"^^xsd:string ;
+    foaf:name "Liqun Zheng"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    pro:holdsRoleInTime :role_2_0 ;
+    foaf:familyName "Qiao"^^xsd:string ;
+    foaf:givenName "Shuang"^^xsd:string ;
+    foaf:name "Shuang Qiao"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "College of Arts, Kunsan National University, Gunsan 541150, North Jeolla Province, South Korea"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "Fuzhou Junze Landscape Engineering Co., LTD, China"^^xsd:string .
+
+:org_2_0 a frapo:Organization ;
+    foaf:name "Art and Design College, Mudanjiang Normal University, Mudanjiang 157000, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:role_2_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_2_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

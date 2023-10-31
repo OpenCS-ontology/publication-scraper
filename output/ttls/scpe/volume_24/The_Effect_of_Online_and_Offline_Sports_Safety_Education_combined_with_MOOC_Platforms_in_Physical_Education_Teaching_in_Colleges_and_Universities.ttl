@@ -1,0 +1,58 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "MOOC"^^xsd:string,
+        "Physical education teaching in colleges and universities"^^xsd:string,
+        "Random"^^xsd:string,
+        "Sports safety"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "The Effect of Online and Offline Sports Safety Education combined with MOOC Platforms in Physical Education Teaching in Colleges and Universities"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "In light of Internet+, how to make network technology better serve the educational cause needs more exploration. The online and offline hybrid education model that integrates MOOC is a new attempt. The sports safety of college students is the premise for the smooth development of sports activities. Therefore, a mixed teaching mode of sports safety combined with MOOC is designed to evaluate the teaching effect. However, under this teaching mode, the commonly used teaching effect evaluation methods cannot adhere to formative evaluation standards. Consequently, to better evaluate the MOOC teaching mode, a model for evaluating instructional effects based on RF mixed teaching mode is constructed. Aiming at the defects of RF in data processing, a genetic algorithm and particle swarm algorithm are used to optimize random forest. The outcomes demonstrate that the enhanced PSO-RF evaluation model has a 98.68% accuracy rate, which is 5.44% and 3.49% higher than the RF and GA-RF model respectively. Therefore, the enhanced PSO-RF-based teaching effect assessment model can better assess the mixed teaching mode in sports safety, meeting the evaluation requirements for students’ learning effects."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 596 ;
+    prism:pageCount 11 ;
+    prism:startingPage 585 ;
+    datacite:doi "10.12694/scpe.v24i3.2285"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2285"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2285> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Gao"^^xsd:string ;
+    foaf:givenName "Yuan"^^xsd:string ;
+    foaf:name "Yuan Gao"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "School of Physical Education, Hunan University of Science and Engineering, Yongzhou, 425199, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

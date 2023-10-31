@@ -1,0 +1,45 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2 ] ;
+    dc:title "Positioning Improving of RSU Devices Used in V2I Communication in Intelligent Transportation System"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "In this work we present solutions which aim at enhancement of the localization precision of the road side unit (RSU) devices which will participate in vehicle-to-infrastructure (V2I) communication in future autonomous driving and intelligent transportation systems (ITS). Currently used localization techniques suffer from limited accuracy which is due to various factors, including noise, delays caused by environmental conditions (e.g. temperature variation) and differences in elevation between devices communicating with each other in the road environment. In case of application of the ITS, these factors can be the source of significant discrepancies between real positions of the RSUs and their estimated values provided by the V2I system. The proposed techniques, based on various approximation techniques, as well as linear and nonlinear filters, allow to improve the localization accuracy, reducing the positioning errors by more than 90 \\%."^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 6 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F288"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/288.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/288.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "3rd Workshop on Internet of Things - Enablers, Challenges and Applications"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Długosz"^^xsd:string ;
+    foaf:givenName "Rafał"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Banach"^^xsd:string ;
+    foaf:givenName "Marzena"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    foaf:familyName "Kubiak"^^xsd:string ;
+    foaf:givenName "Katarzyna"^^xsd:string .
+

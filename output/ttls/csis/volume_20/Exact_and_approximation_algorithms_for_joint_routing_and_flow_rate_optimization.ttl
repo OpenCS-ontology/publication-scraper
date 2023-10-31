@@ -1,0 +1,40 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1 ] ;
+    dc:title "Exact and approximation algorithms for joint routing and flow rate optimization"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "This paper addresses comparison of algorithms for a version of the NUM problem. The joint formulation of routing and transmission rate control within the multi-user and single-path setting is assumed within the NUM. Since problem is NP-hard, the efficient heuristics are designed, implemented and compared experimentally with other existing heuristics and exact linear programming solver. The linear approximation is applied for nonlinear utility function. The results of experiments demonstrate a trade-off between computing time and precision of goal value."^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 7 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F85"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/85.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/85.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "12th International Workshop on Computational Optimization"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Junosza-Szaniawski"^^xsd:string ;
+    foaf:givenName "Konstanty"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Nogalski"^^xsd:string ;
+    foaf:givenName "Dariusz"^^xsd:string .
+

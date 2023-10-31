@@ -1,0 +1,45 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2 ] ;
+    dc:title "A Framework for Network Intrusion Detection using Network Programmability and Data Stream Clustering Machine Learning Algorithms"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Several operational security mechanisms have been developed to mitigate malicious activity in the Internet. However, the most these mechanisms require a signature basis and present the inability to predict new malicious activity. Other anomaly-based mechanisms are inefficient due to the possibility of an attacker simulates legitimate traffic, which causes many false alarms. Thus, to overcome that problem, in this paper we present an anomaly-based framework that uses network programmability and machine learning algorithms over continuous data stream. Our approach overcomes the main challenges that occur when develop an anomaly-based system using machine learning techniques. We have done an experimental evaluation to demonstrate the feasibility of the proposed framework. In the experiments, we use a DDoS attack as network intrusion and we show that the technique attains an Accuracy of 98.98\\%, a Recall of 60\\%, a Precision of 60\\% and an FPR of 0.48\\% for 1\\% DDoS attack on the real normal traffic. This shows the effectiveness of our technique."^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 6 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F87"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/87.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/87.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "Advances in Network Systems and Applications"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Nascimento"^^xsd:string ;
+    foaf:givenName "Anderson Clayton Alves"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Ribeiro"^^xsd:string ;
+    foaf:givenName "Admilson de Ribamar Lima"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    foaf:familyName "Ordonez"^^xsd:string ;
+    foaf:givenName "Edward David Moreno"^^xsd:string .
+

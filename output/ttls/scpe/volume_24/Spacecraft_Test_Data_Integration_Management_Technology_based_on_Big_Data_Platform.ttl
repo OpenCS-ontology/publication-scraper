@@ -1,0 +1,59 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Anomaly detection"^^xsd:string,
+        "Front-end test equipment"^^xsd:string,
+        "LSTM"^^xsd:string,
+        "Spacecraft"^^xsd:string,
+        "Telemetry"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "Spacecraft Test Data Integration Management Technology based on Big Data Platform"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "In this paper, a general test platform for spacecraft data management is designed and constructed. This paper introduces a portable software development environment based on LUA. The technology of space environment data management, comprehensive analysis, parameter correction and visual display of spacecraft is realized. The relationship between continuity, mixed dispersion, variation and indication of remote sensing data is studied. This project uses the integrated Long Short Term Memory network (LSTM) technology to detect anomalies in satellite remote sensing observation data. Give full play to the advantages of laser scanning tunneling microscope in the nonlinear field. The combination of this method and the matrix method can improve the adaptive ability of spacecraft in an operation state to better identify abnormal information in remote sensing data. Experiments show that the algorithm can significantly improve the anomaly detection rate of the system. The system can monitor the front test device and record the data. The method can be connected with the space vehicle’s central control and automatic test system. The comprehensive management of the integrated test system of space vehicles is realized."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 630 ;
+    prism:pageCount 9 ;
+    prism:startingPage 621 ;
+    datacite:doi "10.12694/scpe.v24i3.2416"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2416"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2416> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Gong"^^xsd:string ;
+    foaf:givenName "Nanqi"^^xsd:string ;
+    foaf:name "Nanqi Gong"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "The University of Hong Kong, Hong Kong"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

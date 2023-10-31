@@ -1,0 +1,73 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Big data analysis"^^xsd:string,
+        "Classification accuracy"^^xsd:string,
+        "Classification effect"^^xsd:string,
+        "Convolutional neural network"^^xsd:string,
+        "Image classification"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1 ] ;
+    dc:title "Research on Space Image Fast Classification Based on Big Data"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "In order to improve the accuracy and effect of space image classification, the author proposes a space image classification method based on Big data analysis, aiming at the shortcomings of low accuracy and long time of current image classification. First, analyze the current research progress of image classification, find out the shortcomings of different classification methods, then collect aerospace images, preprocess the images, and use big data analysis technology to establish image classifiers, image classification was performed using an image classifier, and finally simulation experiments were conducted with other methods for image classification. The results indicate that: The average classification time of this method for aerospace images is 3.5 minutes, which saves 14 minutes and 29 minutes compared to traditional method 1 and traditional method 2, respectively. This indicates that this method has the shortest image classification time and improves the classification efficiency of aerospace images. This method has been proven to have high accuracy in image classification, the shortest classification time, and significant advantages compared to other image classification methods."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 640 ;
+    prism:pageCount 9 ;
+    prism:startingPage 631 ;
+    datacite:doi "10.12694/scpe.v24i3.2423"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2423"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2423> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Chen"^^xsd:string ;
+    foaf:givenName "Peng"^^xsd:string ;
+    foaf:name "Peng Chen"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Wang"^^xsd:string ;
+    foaf:givenName "Yunyan"^^xsd:string ;
+    foaf:name "Yunyan Wang"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "School of Electrical and Electronic Engineering, Hubei University of Technology, Wuhan, 430072 China"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "School of Electrical and Electronic Engineering, Hubei University of Technology, Wuhan, 430072 China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

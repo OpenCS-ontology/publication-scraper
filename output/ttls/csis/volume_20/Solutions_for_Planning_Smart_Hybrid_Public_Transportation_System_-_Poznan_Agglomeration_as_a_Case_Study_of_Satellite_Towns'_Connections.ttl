@@ -1,0 +1,45 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2 ] ;
+    dc:title "Solutions for Planning Smart Hybrid Public Transportation System - Poznan Agglomeration as a Case Study of Satellite Towns' Connections"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "A primary goal of the Internet of Things is to create smart spaces, including smart cities and intelligent transportation system (ITS). One of the ITS variants is smart hybrid public transportation system, whose efficient development requires a broad support from the side of information and communication technologies (ICT). For such a system to function optimally, vehicles that are part of it have to be able to exchange data with other road users and road infrastructure. This applies especially to autonomous vehicles, whose trajectories may be in the future controlled through the vehicle-to-infrastructure (V2I) communication network. In the paper we propose a system that can be used to optimize the boundaries of relatively small suburban zones, in which public autonomous vehicles would be allowed to operate. Vehicles of this type may offer the transport only to the nearest local railway stations, from which the travel to the central city of the agglomeration would be continued for example by train. The concept of the proposed solution is based on the Voronoi diagrams, in which particular suburban train stations are treated as local attractors. The proposed software system in one of its stages uses Google Maps engine that allows for the determination of road distances and travel times between particular towns. On the basis of such data it determines the mentioned zones. Their boundaries, as well as optimal routes in a given period of the day may be communicated to the vehicles through the V2I system. The system performance is presented for an exemplary case of Poznan city, Poland."^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 5 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F293"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/293.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/293.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "3rd Workshop on Internet of Things - Enablers, Challenges and Applications"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Długosz"^^xsd:string ;
+    foaf:givenName "Rafał"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Banach"^^xsd:string ;
+    foaf:givenName "Marzena"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    foaf:familyName "Kubiak"^^xsd:string ;
+    foaf:givenName "Katarzyna"^^xsd:string .
+

@@ -1,0 +1,55 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2,
+                :author_3,
+                :author_4 ] ;
+    dc:title "The Use of Modern Multimedia Trends for Popularization of Mechatronics by Presenting Its Present and Future Application"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Mechatronics belongs to the modern fields of the science and technology. Modern mechatronics combines mechanics, electronics, automation and informatics. However, young people often understand mechatronics as a combination of mechanics and electronics. This erroneous paradigm brings many problems in education and industry. Actual trend in the industry is Industry 4.0 - also called as fourth industrial revolution. It is a collective name for current automation, exchanging of data and manufacturing technologies. Today's industry (digital factories) is full of information and communication technologies such as Internet of Things, virtual / mixed reality, cloud computing, etc. Unfortunately, only small amount of high school pupils would like to study mechatronics because young generation is influenced by the outdated perception of this field and does not perceive some of its new aspects. They do not see modern technologies in this field. The authors of the paper decided to present mechatronics as a modern branch in an original way - by a fanfilm inspired by Avengers: Infinity War."^^xsd:string ] ;
+    frbr:realization :Conference_Paper .
+
+:Conference_Paper a fabio:ConferencePaper ;
+    prism:pageCount 5 ;
+    prism:publicationDate "2019-09-20"^^xsd:date ;
+    dc:language "english"^^xsd:string ;
+    dc:licence "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2019F182"^^xsd:string ;
+    fabio:hasURL "https://annals-csis.org/Volume_20/drp/182.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings ;
+    owl:sameAs <https://annals-csis.org/Volume_20/drp/182.html> .
+
+:Conference_Proceedings a fabio:ConferenceProceedings ;
+    foaf:name "12th International Symposium on Multimedia Applications and Processing"^^xsd:string .
+
+:author_0 a foaf:Person ;
+    foaf:familyName "Kučera"^^xsd:string ;
+    foaf:givenName "Erik"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Leskovský"^^xsd:string ;
+    foaf:givenName "Roman"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    foaf:familyName "Drahoš"^^xsd:string ;
+    foaf:givenName "Peter"^^xsd:string .
+
+:author_3 a foaf:Person ;
+    foaf:familyName "Matišák"^^xsd:string ;
+    foaf:givenName "Jakub"^^xsd:string .
+
+:author_4 a foaf:Person ;
+    foaf:familyName "Haffner"^^xsd:string ;
+    foaf:givenName "Oto"^^xsd:string .
+

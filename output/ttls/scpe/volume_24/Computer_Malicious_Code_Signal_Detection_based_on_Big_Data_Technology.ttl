@@ -1,0 +1,58 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Android malware detection"^^xsd:string,
+        "Feature extraction"^^xsd:string,
+        "Feature selection"^^xsd:string,
+        "Set classification algorithm"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "Computer Malicious Code Signal Detection based on Big Data Technology"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The article addresses the challenges modelled by the inadequacy of traditional detection methods in effectively handling the substantial volume of software behavior samples, particularly in big data. A novel approach is proposed for leveraging big data technology to detect malicious computer code signals. Additionally, it seeks to attack the issues associated with machine learning-based mobile malware detection, namely the presence of a large number of features, low accuracy in detection, and imbalanced data distribution. To resolve these challenges, this paper presents a multifaceted methodology. First, it introduces a feature selection technique based on mean and variance analysis to eliminate irrelevant features hindering classification accuracy. Next, a comprehensive classification method is implemented, utilizing various feature extraction techniques such as principal component analysis (PCA), Kaehunen-Loeve transform (KLT), and independent component analysis (ICA). These techniques collectively contribute to enhancing the Precision of the detection process. Recognizing the issue of unbalanced data distribution among software samples, the study proposes a multi-level classification integration model grounded in decision trees. In response, the research focuses on enhancing accuracy and mitigating the impact of data imbalance through a combination of feature selection, extraction techniques, and a multi-level classification model. The empirical results highlight the effectiveness of the proposed methodologies, showcasing notable accuracy improvements ranging from 3.36% to 6.41% across different detection methods on the Android platform. The introduced malware detection technology, grounded in source code analysis, demonstrates a promising capacity to identify Android malware effectively."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 530 ;
+    prism:pageCount 9 ;
+    prism:startingPage 521 ;
+    datacite:doi "10.12694/scpe.v24i3.2163"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2163"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2163> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Liu"^^xsd:string ;
+    foaf:givenName "Xiaoteng"^^xsd:string ;
+    foaf:name "Xiaoteng Liu"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Xinxiang vocational and technical college, Xinxiang Henan, 453000, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

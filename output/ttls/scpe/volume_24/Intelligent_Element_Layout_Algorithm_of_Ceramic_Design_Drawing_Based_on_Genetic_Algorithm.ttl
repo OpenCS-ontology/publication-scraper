@@ -1,0 +1,86 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Ceramics"^^xsd:string,
+        "Design chart"^^xsd:string,
+        "Genetic algorithm"^^xsd:string,
+        "Intelligence"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2 ] ;
+    dc:title "Intelligent Element Layout Algorithm of Ceramic Design Drawing Based on Genetic Algorithm"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Conventional intelligent layout algorithm of ceramic design drawing elements mainly uses density distribution method to obtain ceramic design drawing element units, which is vulnerable to the influence of pattern density, resulting in a low distribution balance of design drawing elements. Therefore, a new intelligent layout algorithm for ceramic design drawing elements needs to be designed based on a genetic algorithm. That is, combining the characteristics of ceramic design drawing elements, the intelligent parting structure of ceramic design drawing elements is constructed, and then the brilliant layout model of ceramic design drawing elements is designed using genetic algorithm. The experimental results show that the developed intelligent layout algorithm of ceramic design elements has a high distribution balance, which proves that the designed intelligent layout algorithm of ceramic design elements has good performance, reliability, and certain application value, and has made specific contributions to improving the aesthetic quality of ceramic design drawings."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 428 ;
+    prism:pageCount 9 ;
+    prism:startingPage 419 ;
+    datacite:doi "10.12694/scpe.v24i3.2284"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2284"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2284> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "He"^^xsd:string ;
+    foaf:givenName "Qin"^^xsd:string ;
+    foaf:name "Qin He"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Li"^^xsd:string ;
+    foaf:givenName "Xinqing"^^xsd:string ;
+    foaf:name "Xinqing Li"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    pro:holdsRoleInTime :role_2_0 ;
+    foaf:familyName "Li"^^xsd:string ;
+    foaf:givenName "Juan"^^xsd:string ;
+    foaf:name "Juan Li"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Academy of Fine Arts, Jingdezhen Ceramic University, Jingdezhen, 333403, China"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "Academy of Fine Arts, Jingdezhen Ceramic University, Jingdezhen, 333403, China"^^xsd:string .
+
+:org_2_0 a frapo:Organization ;
+    foaf:name "School of Information and Engineering, Jingdezhen Ceramic University, Jingdezhen, 333403, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:role_2_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_2_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

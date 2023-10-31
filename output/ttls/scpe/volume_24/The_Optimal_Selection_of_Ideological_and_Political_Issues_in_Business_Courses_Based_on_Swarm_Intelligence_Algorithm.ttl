@@ -1,0 +1,58 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Commerce and trade"^^xsd:string,
+        "Ideological and political issues"^^xsd:string,
+        "Optimal solution"^^xsd:string,
+        "Swarm intelligence algorithm"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0 ] ;
+    dc:title "The Optimal Selection of Ideological and Political Issues in Business Courses Based on Swarm Intelligence Algorithm"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The current optimal selection matrix for ideological and political issues of business courses is mostly set as a single objective form, and the topic selection is limited in scope, increasing the mutation rate of the optimal selection of topics. Therefore, the design and analysis of the optimal selection method for ideological and political issues of business courses based on the swarm intelligence algorithm is proposed. According to the actual measurement needs and standards, extract the optimal characteristic of ideological and political issues selection of the curriculum, use a multi-level approach to break the limits of issues selection, establish a multi-level swarm intelligence selection matrix, build an optimal selection model for ideological and political issues of business and trade courses based on swarm intelligence accounting, and achieve the optimal selection of issues through group fixed-point optimization. The novelty of this work lies in the design and analysis of the optimal selection method for ideological and political issues in business courses using a swarm intelligence algorithm. This approach introduces a new way of selecting topics by harnessing the power of collective intelligence inspired by the behavior of insects or animals. The final test results show that the mutation rate of the optimal selection of the three topics finally screened using the swarm intelligence algorithm is better controlled below 0.2 through the measurement of five classes, indicating that the topic is more practical, more targeted, and has better discussion value."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 417 ;
+    prism:pageCount 8 ;
+    prism:startingPage 409 ;
+    datacite:doi "10.12694/scpe.v24i3.2283"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2283"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2283> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Yin"^^xsd:string ;
+    foaf:givenName "Xuecai"^^xsd:string ;
+    foaf:name "Xuecai Yin"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Zhoukou Vocational and Technical College, Zhoukou, 466000, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

@@ -1,0 +1,80 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Motion recovery structure (SFM)"^^xsd:string,
+        "Pixel"^^xsd:string,
+        "Space mission"^^xsd:string,
+        "Three-dimensional reconstruction"^^xsd:string,
+        "Topology modeling"^^xsd:string,
+        "Visual interaction"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2 ] ;
+    dc:title "Application of Data Visualization Interaction Technology in Aerospace Data Processing"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "A visualization and interactive network topology model are studied based on real-time features generated during spaceflight. Start by establishing a consistent set of data and logical interaction interfaces. This paper presents a method of scenario model construction and application programming based on virtual reality technology. The scene elements are extracted into two types of primitives, namely logical type and simulated object type. This provides a unified architecture for the editing and processing of graphic elements. This system can realize the automatic creation of the scene. Then the point cloud data obtained by sparse reconstruction of SFM is reconstructed to the Poisson surface. You get a dense, uniform grid. Experiments show that the proposed algorithm can realize the 3D reconstruction of non-cooperative objects. The spatial feature points obtained in the spatial positioning of non-cooperative objects can provide necessary technical support for its orbit positioning. The model can quickly generate new model scenario pages according to the characteristics of the task. This method changes the display mode, which can only be static or limited dynamic before. It has also improved the efficiency of space mission preparation. "^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 650 ;
+    prism:pageCount 9 ;
+    prism:startingPage 641 ;
+    datacite:doi "10.12694/scpe.v24i3.2438"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2438"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2438> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Lin"^^xsd:string ;
+    foaf:givenName "Jia"^^xsd:string ;
+    foaf:name "Jia Lin"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    foaf:familyName "Chen"^^xsd:string ;
+    foaf:givenName "Zhijian"^^xsd:string ;
+    foaf:name "Zhijian Chen"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    pro:holdsRoleInTime :role_2_0 ;
+    foaf:familyName "Zheng"^^xsd:string ;
+    foaf:givenName "Bigerng"^^xsd:string ;
+    foaf:name "Bigerng Zheng"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "School of Artificial Intelligence, Zhuhai City Polytechnic, Zhuhai 519090, China"^^xsd:string .
+
+:org_2_0 a frapo:Organization ;
+    foaf:name "School of Electronic Information Engineering, Jingchu University of Technology, Jingmen 448000, China"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:role_2_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_2_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+

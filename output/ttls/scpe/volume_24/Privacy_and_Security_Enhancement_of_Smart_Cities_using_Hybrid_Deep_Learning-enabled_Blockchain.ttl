@@ -1,0 +1,110 @@
+@prefix : <https://w3id.org/ocs/ont/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper a fabio:ResearchPaper ;
+    prism:keyword "Blockchain"^^xsd:string,
+        "Convolutional neural network"^^xsd:string,
+        "Deep Learning"^^xsd:string,
+        "Internet of Things"^^xsd:string,
+        "Intrusion detection"^^xsd:string,
+        "Principal Component Analysis"^^xsd:string,
+        "Privacy and security"^^xsd:string,
+        "Sensor technology"^^xsd:string ;
+    dc:created "2023-09-10"^^xsd:date ;
+    dc:creator [ :hasItem :author_0,
+                :author_1,
+                :author_2,
+                :author_3,
+                :author_4 ] ;
+    dc:title "Privacy and Security Enhancement of Smart Cities using Hybrid Deep Learning-enabled Blockchain"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The emergence of the Internet of Things (IoT) accelerated the implementation of various smart city applications and initiatives. The rapid adoption of IoT-powered smart cities is faced by a number of security and privacy challenges that hindered their application in areas such as critical infrastructure. One of the most crucial elements of any smart city is safety. Without the right safeguards, bad actors can quickly exploit weak systems to access networks or sensitive data. Security issues are a big worry for smart cities in addition to safety issues. Smart cities become easy targets for attackers attempting to steal data or disrupt services if they are not adequately protected against cyberthreats like malware or distributed denial-of-service (DDoS) attacks. Therefore, in order to safeguard their systems from potential threats, businesses must employ strong security protocols including encryption, authentication, and access control measures. In order to ensure that their network traffic remains secure, organizations should implement powerful network firewalls and intrusion detection systems (IDS). This article proposes a blockchain-supported hybrid Convolutional Neural Network (CNN) with Kernel Principal Component Analysis (KPCA) to provide privacy and security for smart city users and systems. Blockchain is used to provide trust, and CNN enabled with KPCA is used for classifying threats. The proposed solution comprises three steps, preprocessing, feature selection, and classification. The standard features of the datasets used are converted to a numeric format during the preprocessing stage, and the result is sent to KPCA for feature extraction. Feature extraction reduces the dimensionality of relevant features before it passes the resulting dataset to the CNN to classify and detect malicious activities. Two prominent datasets namely ToN-IoT and BoT-IoT were used to measure the performance of this anticipated method compared to its best rivals in the literature. Experimental evaluation results show an improved performance in terms of threat prediction accuracy, and hence, increased security, privacy, and maintainability of IoT-enabled smart cities."^^xsd:string ] ;
+    frbr:realization :Journal_Article .
+
+:Journal a fabio:Journal ;
+    frbr:part :Journal_Volume .
+
+:Journal_Article a fabio:JournalArticle ;
+    prism:endingPage 584 ;
+    prism:pageCount 23 ;
+    prism:startingPage 561 ;
+    datacite:doi "10.12694/scpe.v24i3.2272"^^xsd:string ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/2272"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/2272> .
+
+:author_0 a foaf:Person ;
+    pro:holdsRoleInTime :role_0_0 ;
+    foaf:familyName "Awotunde"^^xsd:string ;
+    foaf:givenName "Joseph Bamidele"^^xsd:string ;
+    foaf:name "Joseph Bamidele Awotunde"^^xsd:string .
+
+:author_1 a foaf:Person ;
+    pro:holdsRoleInTime :role_1_0 ;
+    foaf:familyName "Gaber"^^xsd:string ;
+    foaf:givenName "Tarek"^^xsd:string ;
+    foaf:name "Tarek Gaber"^^xsd:string .
+
+:author_2 a foaf:Person ;
+    pro:holdsRoleInTime :role_2_0 ;
+    foaf:familyName "Lalitha"^^xsd:string ;
+    foaf:givenName "Vuyyuru Lakshmi"^^xsd:string ;
+    foaf:name "Vuyyuru Lakshmi Lalitha"^^xsd:string .
+
+:author_3 a foaf:Person ;
+    foaf:familyName "Folorunso"^^xsd:string ;
+    foaf:givenName "Sakinat Oluwabukonla"^^xsd:string ;
+    foaf:name "Sakinat Oluwabukonla Folorunso"^^xsd:string .
+
+:author_4 a foaf:Person ;
+    pro:holdsRoleInTime :role_4_0 ;
+    foaf:familyName "Prasad"^^xsd:string ;
+    foaf:givenName "L V Narasimha"^^xsd:string ;
+    foaf:name "L V Narasimha Prasad"^^xsd:string .
+
+:org_0_0 a frapo:Organization ;
+    foaf:name "Department of Computer Science, Faculty of Information and Communication Sciences, University of Ilorin, Ilorin 240003, Nigeria. Artificial Intelligent Systems Research Group (ArISRG), Department of Mathematical Sciences, Olabisi Onabanjo University, Ago-Iwoye, Nigeria"^^xsd:string .
+
+:org_1_0 a frapo:Organization ;
+    foaf:name "Faculty of Computers and Informatics, Suez Canal University, Ismailia 41522, Egypt. School of Science, Engineering, and Environment, University of Salford, Manchester M5 4WT, UK"^^xsd:string .
+
+:org_2_0 a frapo:Organization ;
+    foaf:name "Koneru Lakshmaiah Education Foundation, India"^^xsd:string .
+
+:org_4_0 a frapo:Organization ;
+    foaf:name "Department of CSE, Institute of Aeronautical Engineering, Hyderabad, India"^^xsd:string .
+
+:role_0_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0_0 ;
+    pro:withRole pro:author .
+
+:role_1_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_1_0 ;
+    pro:withRole pro:author .
+
+:role_2_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_2_0 ;
+    pro:withRole pro:author .
+
+:role_4_0 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_4_0 ;
+    pro:withRole pro:author .
+
+:Journal_Issue a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume .
+
+:Journal_Volume a fabio:JournalVolume ;
+    prism:volume "24"^^xsd:string ;
+    frbr:part :Journal_Issue ;
+    frbr:partOf :Journal .
+
