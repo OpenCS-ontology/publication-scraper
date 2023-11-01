@@ -34,8 +34,20 @@ def return_config(path):
 
 
 def main():
+    archives = ["scpe", "csis"]
     processing_CSIS = True
     processing_SCPE = True
+
+    for archive in archives:
+        pdf_path = f"/scraper/output/pdfs/{archive}"
+        ttl_path = f"/scraper/output/ttls/{archive}"
+
+        shutil.rmtree(pdf_path)
+        shutil.rmtree(ttl_path)
+
+        os.mkdir(pdf_path)
+        os.mkdir(ttl_path)
+
     if processing_SCPE:
         print("Processing SCPE archives...")
         logging.basicConfig(
@@ -67,9 +79,11 @@ def main():
             if not os.path.exists(ttl_dir):
                 os.makedirs(ttl_dir)
 
-            ttl_filename = os.path.join(ttl_dir, os.path.basename(article.title + ".ttl"))
+            ttl_filename = os.path.join(
+                ttl_dir, os.path.basename(article.title + ".ttl")
+            )
             ttl_filename = ttl_filename.replace(" ", "_")
-            
+
             with open(ttl_filename, "w") as file:
                 file.write(g)
         print("Process succeded")
@@ -101,10 +115,10 @@ def main():
         for volume in args.volumes:
             output_path = config["output_path"]
 
-            #if os.path.exists(output_path):
+            # if os.path.exists(output_path):
             #    shutil.rmtree(output_path)
 
-            #os.mkdir(output_path)
+            # os.mkdir(output_path)
             if volume == 1:
                 print("Voulme 1 currenly unavailable")
             else:
@@ -123,7 +137,9 @@ def main():
                 if not os.path.exists(ttl_dir):
                     os.mkdir(ttl_dir)
 
-                ttl_filename = os.path.join(ttl_dir, os.path.basename(article.title + ".ttl"))
+                ttl_filename = os.path.join(
+                    ttl_dir, os.path.basename(article.title + ".ttl")
+                )
                 ttl_filename = ttl_filename.replace(" ", "_")
 
                 with open(ttl_filename, "w") as file:
