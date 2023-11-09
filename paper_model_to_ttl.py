@@ -1,6 +1,7 @@
 from rdflib import Graph, Literal, RDF, URIRef, Namespace, RDFS
 from rdflib.namespace import XSD
 from models.model import PaperModel
+import hashlib
 
 from rdflib import BNode
 
@@ -33,6 +34,19 @@ def add_to_graph(g, subject, predicate, object_, datatype=None, to_literal=True)
             g.add((subject, predicate, Literal(object_, datatype=datatype)))
         else:
             g.add((subject, predicate, object_))
+
+
+def gen_hash(input_string, length=9):
+    sha256_hash = hashlib.sha256()
+    sha256_hash.update(input_string.encode('utf-8'))
+    
+    # Get the hexadecimal representation of the hash
+    full_hash = sha256_hash.hexdigest()
+    
+    # Take only the first 'length' characters of the hash
+    short_hash = full_hash[:length]
+    
+    return short_hash
 
 
 def convert_paper_model_to_graph(article_data: PaperModel):
@@ -76,32 +90,24 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     g.bind("literal", literal)
 
     paper = Literal(article_data.title)
-    paper = URIRef(bn.paper)
-
-    # paper = URIRef(makg.Paper)
-
-    # add_to_graph(
-    #     g, makg.Author, RDFS.label, Literal("Author", lang="en"), to_literal=False
-    # )
+    paper = URIRef(bn + f"paper_{gen_hash(article_data.abstract_text)}")
 
     authors = BNode()
 
     authors_processed = []
     for i, author in enumerate(article_data.authors):
-        author_ = URIRef(bn + f"author_{i}")
+        author_ = URIRef(bn + f"author_{gen_hash(author.name)}")
         add_to_graph(g, author_, RDF.type, foaf.Person, to_literal=False)
         add_to_graph(g, author_, foaf.name, author.name, datatype=XSD.string)
         add_to_graph(g, author_, foaf.givenName, author.given_name, datatype=XSD.string)
-        add_to_graph(
-            g, author_, foaf.familyName, author.family_name, datatype=XSD.string
-        )
+        add_to_graph(g, author_, foaf.familyName, author.family_name, datatype=XSD.string)
         if author.affiliations:
             for j, affiliation in enumerate(author.affiliations):
-                role = URIRef(bn + f"role_{i}_{j}")
+                role = URIRef(bn + f"role_{gen_hash(author.name+affiliation.name)}")
                 add_to_graph(g, author_, pro.holdsRoleInTime, role, to_literal=False)
                 add_to_graph(g, role, RDF.type, pro.RoleInTime, to_literal=False)
                 add_to_graph(g, role, pro.withRole, pro.author, to_literal=False)
-                organization = URIRef(bn + f"org_{i}_{j}")
+                organization = URIRef(bn + f"org_{gen_hash(affiliation.name)}")
                 add_to_graph(
                     g, role, pro.relatesToOrganization, organization, to_literal=False
                 )
@@ -139,20 +145,20 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     )
 
     if article_data.paper_type == "JournalArticle":
-        article = URIRef(bn + f"Journal_Article")
+        article = URIRef(bn + f"Journal_Article_{gen_hash(article_data.doi)}")
         add_to_graph(g, article, RDF.type, fabio.JournalArticle, to_literal=False)
 
-        issue = URIRef(bn + f"Journal_Issue")
+        issue = URIRef(bn + f"Journal_Issue_{gen_hash(article_data.doi+'issue')}")
         add_to_graph(g, issue, RDF.type, fabio.JournalIssue, to_literal=False)
         add_to_graph(g, article, frbr.partOf, issue, to_literal=False)
 
-        volume = URIRef(bn + f"Journal_Volume")
+        volume = URIRef(bn + f"Journal_Volume_{gen_hash(article_data.issn+article_data.volume)}")
         add_to_graph(g, volume, RDF.type, fabio.JournalVolume, to_literal=False)
         add_to_graph(g, volume, prism.volume, article_data.volume, datatype=XSD.string)
         add_to_graph(g, issue, frbr.partOf, volume, to_literal=False)
         add_to_graph(g, volume, frbr.part, issue, to_literal=False)
 
-        journal = URIRef(bn + f"Journal")
+        journal = URIRef(bn + f"Journal_{gen_hash(article_data.issn)}")
         add_to_graph(g, journal, RDF.type, fabio.Journal, to_literal=False)
         if article_data.journal:
             add_to_graph(
@@ -163,9 +169,9 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         add_to_graph(g, journal, frbr.part, volume, to_literal=False)
 
     elif article_data.paper_type == "ConferencePaper":
-        article = URIRef(bn + f"Conference_Paper")
+        article = URIRef(bn + f"Conference_Paper_{gen_hash(article_data.doi)}")
         add_to_graph(g, article, RDF.type, fabio.ConferencePaper, to_literal=False)
-        proceedings = URIRef(bn + f"Conference_Proceedings")
+        proceedings = URIRef(bn + f"Conference_Proceedings_{gen_hash(article_data.conference.name)}")
         add_to_graph(
             g, proceedings, RDF.type, fabio.ConferenceProceedings, to_literal=False
         )
@@ -213,7 +219,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     add_to_graph(g, article, owl.sameAs, URIRef(article_data.url), to_literal=False)
 
     if article_data.manifestation:
-        manifestation = URIRef(bn + "Manifestation")
+        manifestation = URIRef(bn + f"Manifestation_{gen_hash(article_data.manifestation.has_url)}")
         add_to_graph(
             g, manifestation, RDF.type, fabio.DigitalManifestation, to_literal=False
         )
@@ -233,7 +239,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         )
         add_to_graph(g, article, fabio.embodiment, manifestation, to_literal=False)
 
-        publisher = URIRef(bn + "Publisher")
+        publisher = URIRef(bn + f"Publisher_{gen_hash(article_data.publisher)}")
         add_to_graph(g, publisher, RDF.type, foaf.Organization, to_literal=False)
         add_to_graph(
             g, publisher, foaf.name, article_data.publisher, datatype=XSD.string
