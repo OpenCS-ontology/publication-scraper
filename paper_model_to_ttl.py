@@ -152,13 +152,13 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         add_to_graph(g, issue, RDF.type, fabio.JournalIssue, to_literal=False)
         add_to_graph(g, article, frbr.partOf, issue, to_literal=False)
 
-        volume = URIRef(bn + f"Journal_Volume_{gen_hash(article_data.issn+article_data.volume)}")
+        volume = URIRef(bn + f"Journal_Volume_{gen_hash(article_data.url+article_data.volume)}")
         add_to_graph(g, volume, RDF.type, fabio.JournalVolume, to_literal=False)
         add_to_graph(g, volume, prism.volume, article_data.volume, datatype=XSD.string)
         add_to_graph(g, issue, frbr.partOf, volume, to_literal=False)
         add_to_graph(g, volume, frbr.part, issue, to_literal=False)
 
-        journal = URIRef(bn + f"Journal_{gen_hash(article_data.issn)}")
+        journal = URIRef(bn + f"Journal_{gen_hash(article_data.url)}")
         add_to_graph(g, journal, RDF.type, fabio.Journal, to_literal=False)
         if article_data.journal:
             add_to_graph(
