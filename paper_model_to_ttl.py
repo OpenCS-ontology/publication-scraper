@@ -2,6 +2,8 @@ from rdflib import Graph, Literal, RDF, URIRef, Namespace, RDFS
 from rdflib.namespace import XSD
 from models.model import PaperModel
 import hashlib
+import random
+import string
 
 from rdflib import BNode
 
@@ -37,14 +39,15 @@ def add_to_graph(g, subject, predicate, object_, datatype=None, to_literal=True)
 
 
 def gen_hash(input_string, length=9):
-    sha256_hash = hashlib.sha256()
-    sha256_hash.update(input_string.encode('utf-8'))
-    
-    # Get the hexadecimal representation of the hash
-    full_hash = sha256_hash.hexdigest()
-    
-    # Take only the first 'length' characters of the hash
-    short_hash = full_hash[:length]
+
+    if input_string is None:
+        characters = string.ascii_letters + string.digits
+        short_hash = ''.join(random.choice(characters) for i in range(9))
+    else:
+        sha256_hash = hashlib.sha256()
+        sha256_hash.update(input_string.encode('utf-8'))
+        full_hash = sha256_hash.hexdigest()
+        short_hash = full_hash[:length]
     
     return short_hash
 
