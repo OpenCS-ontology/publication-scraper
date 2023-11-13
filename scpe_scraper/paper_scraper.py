@@ -73,7 +73,9 @@ class PaperScraperResponse:
     fallback_title: str
 
 
-def scrape_all_doi(scraped_article_info: List[PaperScraperResponse]) -> None:
+def scrape_all_doi(
+    scraped_article_info: List[PaperScraperResponse], scpe_issues_to_scraper: List[int]
+) -> None:
     """
     Using HTTP requests get DOIs of all articles in the SCPE archives.
     :param q: Parallel listener into which to return found data.
@@ -93,11 +95,10 @@ def scrape_all_doi(scraped_article_info: List[PaperScraperResponse]) -> None:
     links_issue = soup_archives.select("#main-content .title")
 
     urls_issue = map(lambda l: l.attrs["href"], links_issue)
-
     for url_issue in urls_issue:
-        scrape_issue(scraped_article_info, "https:" + url_issue)
-        print(f"Processing issue: {url_issue}")
-        break
+        if int(url_issue.split("/")[-1]) in scpe_issues_to_scraper:
+            print(f"Processing issue: {url_issue}")
+            scrape_issue(scraped_article_info, "https:" + url_issue)
 
 
 def scrape_issue(
