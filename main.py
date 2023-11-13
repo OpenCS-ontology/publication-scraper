@@ -129,9 +129,15 @@ def main():
         help="Path to config CSIS scraper file, default `scrape_config.yaml`",
     )
     args = parser.parse_args()
+    if args.scpe_issues:
+        scpe_issues_to_scrape = eval(args.scpe_issues)
+    else:
+        scpe_issues_to_scrape = [issue for issue in range(1, 201)]
 
-    scpe_issues_to_scrape = eval(args.scpe_issues)
-    csis_volumes_to_scrape = eval(args.csis_volumes)
+    if args.csis_volumes:
+        csis_volumes_to_scrape = eval(args.csis_volumes)
+    else:
+        csis_volumes_to_scrape = [volume for volume in range(2, 39)]
 
     for archive in archives:
         pdf_path = f"/scraper/output/pdfs/{archive}"
