@@ -120,11 +120,11 @@ class _DriverWrapper(ABC):
         """
         volume_dir = "csis/volume_" + str(volume)
         self.pdf_directory = os.path.join(output_path, pdf_directory, volume_dir)
-        #self.ttl_directory = os.path.join(output_path, ttl_directory)
+        # self.ttl_directory = os.path.join(output_path, ttl_directory)
 
         if not os.path.exists(self.pdf_directory):
             os.mkdir(self.pdf_directory)
-        #if not os.path.exists(self.ttl_directory):
+        # if not os.path.exists(self.ttl_directory):
         #    os.makedirs(self.ttl_directory)
 
         service = Service(executable_path="./csis_scraper/chromedriver")
@@ -134,15 +134,7 @@ class _DriverWrapper(ABC):
             "prefs", {"profile.managed_default_content_settings.images": 2}
         )
         chrome_options.add_argument("--no-sandbox")
-        chrome_options.add_argument("--disable-setuid-sandbox")
-        chrome_options.add_argument("--remote-debugging-port=9222")  # this
         chrome_options.add_argument("start-maximized")  # open Browser in maximized mode
-        chrome_options.add_argument("--disable-extensions")  # disabling extensions
-        chrome_options.add_argument("--disable-gpu")  # applicable to windows os only
-        chrome_options.add_argument(
-            "--disable-dev-shm-usage"
-        )  # overcome limited resource problems
-        chrome_options.add_argument("disable-infobars")
         chrome_options.add_argument("--headless")
 
         self.driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -472,8 +464,6 @@ class _DriverWrapper(ABC):
             namespace = [marker.text for marker in h4]
             namespace = [name for name in namespace if name not in empty_h4]
 
-        # no_acceptance_lst = ["Software, System and Service Engineering"]
-
         volume_conference = []
         if len(namespace) == len(numbers_lst):
             for index, name in enumerate(namespace):
@@ -517,6 +507,7 @@ class DriverWrapper(_DriverWrapper):
         -------
         None
         """
+        print(page_url)
         self.get_page(page_url)
 
         print("Reading conference names...")
@@ -548,8 +539,6 @@ class DriverWrapper(_DriverWrapper):
 
         print("Downloading papers...")
         self.download_papers(urls_to_get_pdf)
-        #print("Renaming papers...")
-        # new_filenames = self.rename_pdfs_and_return_new_filenames(self.pdf_directory)
 
         dois, abstracts = {}, {}
         if page_url not in article_urls:
@@ -645,7 +634,7 @@ class DriverWrapper(_DriverWrapper):
                 language=self.language,
                 license=self.licence,
                 journal=Journal(name=self.journal_name, website=page_url),
-                paper_type="ConferencePaper"
+                paper_type="ConferencePaper",
             )
 
             pdf_id = str(article_urls[index]).lstrip("drp/").rstrip(".html")
@@ -654,14 +643,5 @@ class DriverWrapper(_DriverWrapper):
             target_file = os.path.join(self.pdf_directory, new_title) + ".pdf"
             os.rename(source_file, target_file)
 
-            # article_data = asdict(scraped)
-
-            # g = convert_dict_to_graph(article_data)
-            # ttl_filename = os.path.join(
-            #     self.ttl_directory, os.path.basename(title + "ttl")
-            # )
-
-            # with open(ttl_filename, "w") as file:
-            #     file.write(g)
             scraped_docs_list.append(scraped)
         return scraped_docs_list
