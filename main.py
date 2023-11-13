@@ -14,6 +14,7 @@ import argparse
 import os
 import yaml
 import shutil
+import tqdm
 
 
 def tuple_type(strings):
@@ -57,11 +58,11 @@ def main():
         )
         scraped_article_info = []
         scpe_article_data_models = []
+        print("Downloading papers and getting doi information...")
         scrape_all_doi(scraped_article_info)
-        for paper in scraped_article_info:
+        for paper in tqdm.tqdm(scraped_article_info, total=len(scraped_article_info)):
             doi_api_response = call_doi_api(paper.doi)
             if doi_api_response.status_code == HTTPStatus.OK:
-                logging.info(f"Decoding response from DOI API for '{paper.doi}'")
                 doi_response_paper_model = doi_api_decoder(doi_api_response.content)
             else:
                 logging.warning(
@@ -71,9 +72,10 @@ def main():
 
             paper_model = create_paper_model(paper, doi_response_paper_model)
             scpe_article_data_models.append(paper_model)
-
-        print("Converting to Turtle")
-        for article in scpe_article_data_models:
+        print("Processing scraped information and saving turtle files...")
+        for article in tqdm.tqdm(
+            scpe_article_data_models, total=len(scpe_article_data_models)
+        ):
             g = convert_paper_model_to_graph(article)
             ttl_dir = f"./output/ttls/scpe/volume_{article.volume}"
             if not os.path.exists(ttl_dir):
@@ -125,7 +127,6 @@ def main():
                 scraper = DriverWrapper(output_path=output_path, volume=volume)
 
             page_to_scrape = config["base_webpage"] + f"Volume_{volume}"
-            print(page_to_scrape)
             print(f"Scraping Volume {volume}, {page_to_scrape}")
             csis_article_data_models = scraper.traverse_papers(
                 page_to_scrape, str(volume)

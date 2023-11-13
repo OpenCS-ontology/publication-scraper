@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from requests.exceptions import ConnectionError
 
 import scpe_scraper.requests_trials as requests
-
+import tqdm
 
 URL_ARCHIVES = "https://www.scpe.org/index.php/scpe/issue/archive"
 BEAUTIFUL_SOUP_FEATURES = "html.parser"
@@ -123,10 +123,9 @@ def scrape_issue(
     links_paper = soup_issue.select(".article-summary .media-heading>a")
 
     urls_paper = map(lambda l: l.attrs["href"], links_paper)
-    for url_paper in urls_paper:
+    for url_paper in tqdm.tqdm(urls_paper, total=len(links_paper)):
         try:
             scrape_paper(scraped_article_info, "https:" + url_paper)
-            print(f"Processing paper: {url_paper}")
         except:
             print(f"Processing paper {url_paper} failed")
 
