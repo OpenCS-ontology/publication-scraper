@@ -130,12 +130,14 @@ def main():
     )
     args = parser.parse_args()
     if args.scpe_issues:
-        scpe_issues_to_scrape = eval(args.scpe_issues)
+        scpe_issues_to_scrape = [int(issue) for issue in args.scpe_issues.split(",")]
     else:
         scpe_issues_to_scrape = [issue for issue in range(1, 201)]
 
     if args.csis_volumes:
-        csis_volumes_to_scrape = eval(args.csis_volumes)
+        csis_volumes_to_scrape = [
+            int(volume) for volume in args.csis_volumes.split(",")
+        ]
     else:
         csis_volumes_to_scrape = [volume for volume in range(2, 39)]
 
