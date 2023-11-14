@@ -641,7 +641,11 @@ class DriverWrapper(_DriverWrapper):
             new_title = str(title).replace(" ", "_")
             source_file = os.path.join(self.pdf_directory, pdf_id) + ".pdf"
             target_file = os.path.join(self.pdf_directory, new_title) + ".pdf"
+            target_path_list = target_file.split("/")
+            if not re.search(r"volume_\d+", target_path_list[-2]):
+                target_path_list[-2] = target_path_list[-2] + "_" + target_path_list[-1]
+                target_path_list = target_path_list[:-1]
+            target_file = os.path.join(*target_path_list)
             os.rename(source_file, target_file)
-
             scraped_docs_list.append(scraped)
         return scraped_docs_list

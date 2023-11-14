@@ -15,6 +15,7 @@ import os
 import yaml
 import shutil
 import tqdm
+import re
 
 
 def tuple_type(strings):
@@ -32,6 +33,16 @@ def tuple_type(strings):
 def return_config(path):
     with open(path, "r") as file:
         return yaml.safe_load(file)
+
+
+def prepare_ttl_path(ttl_dir, article):
+    ttl_path_split = os.path.join(ttl_dir, article.title).split("/")
+    if not re.search(r"volume_\d+", ttl_path_split[-2]):
+        ttl_path_split[-2] = ttl_path_split[-2] + "_" + ttl_path_split[-1]
+        ttl_path_split = ttl_path_split[:-1]
+    ttl_filename = os.path.join(*ttl_path_split) + ".ttl"
+    ttl_filename = ttl_filename.replace(" ", "_")
+    return ttl_filename
 
 
 def scrape_scpe(scpe_issues_to_scrape):
@@ -66,8 +77,7 @@ def scrape_scpe(scpe_issues_to_scrape):
         if not os.path.exists(ttl_dir):
             os.makedirs(ttl_dir)
 
-        ttl_filename = os.path.join(ttl_dir, os.path.basename(article.title + ".ttl"))
-        ttl_filename = ttl_filename.replace(" ", "_")
+        ttl_filename = prepare_ttl_path(ttl_dir, article)
 
         with open(ttl_filename, "w") as file:
             file.write(g)
@@ -100,11 +110,7 @@ def scrape_csis(csis_volumes_to_scrape, args):
             ttl_dir = f"./output/ttls/csis/volume_{article.volume}"
             if not os.path.exists(ttl_dir):
                 os.mkdir(ttl_dir)
-
-            ttl_filename = os.path.join(
-                ttl_dir, os.path.basename(article.title + ".ttl")
-            )
-            ttl_filename = ttl_filename.replace(" ", "_")
+            ttl_filename = prepare_ttl_path(ttl_dir, article)
 
             with open(ttl_filename, "w") as file:
                 file.write(g)
