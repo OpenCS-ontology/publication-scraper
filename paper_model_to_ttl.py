@@ -157,7 +157,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
 
         volume = URIRef(bn + f"Journal_Volume_{gen_hash(article_data.url+article_data.volume)}")
         add_to_graph(g, volume, RDF.type, fabio.JournalVolume, to_literal=False)
-        add_to_graph(g, volume, prism.volume, article_data.volume, datatype=XSD.string)
+        add_to_graph(g, volume, prism.volume, article_data.volume, datatype=XSD.integer)
         add_to_graph(g, issue, frbr.partOf, volume, to_literal=False)
         add_to_graph(g, volume, frbr.part, issue, to_literal=False)
 
