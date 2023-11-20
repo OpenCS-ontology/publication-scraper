@@ -5,6 +5,32 @@ import models.model as model
 import scpe_scraper.doi_api_model as doi_api
 import scpe_scraper.paper_scraper as scraper
 
+def convert_to_int(s):
+    if not s:
+        return 0
+
+    s = s.upper()  # Convert to uppercase for case insensitivity
+    roman_numerals = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+
+    if s.isdigit():
+        return int(s)  # If the input is already an integer, return it
+
+    result = 0
+    prev_value = 0
+
+    for numeral in s:
+        value = roman_numerals.get(numeral, 0)
+        if value == 0:
+            return "Invalid Roman numeral"
+
+        if value > prev_value:
+            result += value - 2 * prev_value
+        else:
+            result += value
+        prev_value = value
+
+    return result
+
 
 def create_author_model(
     scraper_author: Optional[scraper.AuthorScraperResponse],
@@ -66,19 +92,19 @@ def create_paper_basic_model(
         authors=set(result_authors),
         date_created=scraper_paper.fallback_created,
         doi=scraper_paper.doi,
-        endingPage=scraper_paper.fallback_ending_page,
+        endingPage=convert_to_int(scraper_paper.fallback_ending_page),
         keywords=None
         if scraper_paper.keywords is None
         else set(scraper_paper.keywords),
         pdf_url=scraper_paper.pdf_url,
-        startingPage=scraper_paper.fallback_starting_page,
+        startingPage=convert_to_int(scraper_paper.fallback_starting_page),
         title=scraper_paper.fallback_title,
         url=scraper_paper.url,
         volume=scraper_paper.fallback_volume,
         paper_type="JournalArticle",
         page_count=str(
-            int(scraper_paper.fallback_ending_page)
-            - int(scraper_paper.fallback_starting_page)
+            convert_to_int(scraper_paper.fallback_ending_page)
+            - convert_to_int(scraper_paper.fallback_starting_page)
         )
         if scraper_paper.fallback_ending_page is not None
         and scraper_paper.fallback_starting_page is not None
@@ -122,20 +148,20 @@ def create_paper_model(
         authors=set(result_authors),
         date_created=doi_api_paper.date,
         doi=scraper_paper.doi,
-        endingPage=doi_api_paper.ending_page,
+        endingPage=convert_to_int(doi_api_paper.ending_page),
         keywords=None
         if scraper_paper.keywords is None
         else set(scraper_paper.keywords),
         pdf_url=scraper_paper.pdf_url,
-        startingPage=doi_api_paper.starting_page,
+        startingPage=convert_to_int(doi_api_paper.starting_page),
         title=scraper_paper.fallback_title.strip('"')
         if doi_api_paper.title is None
         else doi_api_paper.title.strip('"'),
         url=scraper_paper.url,
         volume=doi_api_paper.volume,
         page_count=str(
-            int(scraper_paper.fallback_ending_page)
-            - int(scraper_paper.fallback_starting_page)
+            convert_to_int(scraper_paper.fallback_ending_page)
+            - convert_to_int(scraper_paper.fallback_starting_page)
         )
         if scraper_paper.fallback_ending_page is not None
         and scraper_paper.fallback_starting_page is not None
