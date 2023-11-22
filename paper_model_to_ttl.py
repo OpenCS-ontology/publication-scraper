@@ -186,12 +186,16 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     add_to_graph(g, paper, frbr.realization, article, to_literal=False)
 
     if article_data.language:
+        if article_data.language == "english":
+            language = "en-US"
+        else:
+            language = article_data.language
         add_to_graph(
-            g, article, dc.language, article_data.language, datatype=XSD.string
+            g, article, dc.language, language, datatype=XSD.string
         )
 
     if article_data.license:
-        add_to_graph(g, article, dc.licence, article_data.license, datatype=XSD.anyURI)
+        add_to_graph(g, article, dc.license, article_data.license, datatype=XSD.anyURI)
 
     add_to_graph(g, article, fabio.hasURL, article_data.url, datatype=XSD.anyURI)
 
@@ -217,7 +221,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
             g, article, prism.pageCount, article_data.page_count, datatype=XSD.integer
         )
 
-    add_to_graph(g, article, datacite.doi, article_data.doi, datatype=XSD.string)
+    add_to_graph(g, article, datacite.doi, article_data.doi, datatype=XSD.anyURI)
 
     add_to_graph(g, article, owl.sameAs, URIRef(article_data.url), to_literal=False)
 
