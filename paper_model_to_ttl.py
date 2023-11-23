@@ -68,29 +68,29 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         A RDF graph representing the information in the input dictionary.
     """
     g = Graph()
-    dc = Namespace("http://purl.org/dc/terms/")
-    datacite = Namespace("http://purl.org/spar/datacite/")
-    fabio = Namespace("http://purl.org/spar/fabio/")
-    foaf = Namespace("http://xmlns.com/foaf/0.1/")
-    prism = Namespace("http://prismstandard.org/namespaces/basic/2.0/")
-    frbr = Namespace("http://purl.org/vocab/frbr/core#")
     bn = Namespace("https://w3id.org/ocs/ont/papers/")
-    pro = Namespace("http://purl.org/spar/pro/")
+    datacite = Namespace("http://purl.org/spar/datacite/")
+    dc = Namespace("http://purl.org/dc/terms/") 
+    fabio = Namespace("http://purl.org/spar/fabio/")
     frapo = Namespace("http://purl.org/cerif/frapo/")
-    owl = Namespace("http://www.w3.org/2002/07/owl#")
+    frbr = Namespace("http://purl.org/vocab/frbr/core#")
     literal = Namespace("http://www.essepuntato.it/2010/06/literalreification/")
-    g.bind("", bn)
+    prism = Namespace("http://prismstandard.org/namespaces/basic/2.0/")
+    pro = Namespace("http://purl.org/spar/pro/")
+    schema = Namespace("http://schema.org/")
+    owl = Namespace("http://www.w3.org/2002/07/owl#")
 
-    g.bind("dc", dc)
+    g.bind("", bn)
     g.bind("datacite", datacite)
+    g.bind("dc", dc)
     g.bind("fabio", fabio)
-    g.bind("frbr", frbr)
-    g.bind("prism", prism)
-    g.bind("foaf", foaf)
-    g.bind("pro", pro)
     g.bind("frapo", frapo)
-    g.bind("owl", owl)
+    g.bind("frbr", frbr)
     g.bind("literal", literal)
+    g.bind("prism", prism)
+    g.bind("pro", pro)
+    g.bind("schema", schema)
+    g.bind("owl", owl)
 
     paper = Literal(article_data.title)
     paper = URIRef(bn + f"paper_{gen_hash(article_data.abstract_text)}")
@@ -100,10 +100,10 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     authors_processed = []
     for i, author in enumerate(article_data.authors):
         author_ = URIRef(bn + f"author_{gen_hash(author.name)}")
-        add_to_graph(g, author_, RDF.type, foaf.Person, to_literal=False)
-        add_to_graph(g, author_, foaf.name, author.name, datatype=XSD.string)
-        add_to_graph(g, author_, foaf.givenName, author.given_name, datatype=XSD.string)
-        add_to_graph(g, author_, foaf.familyName, author.family_name, datatype=XSD.string)
+        add_to_graph(g, author_, RDF.type, schema.Person, to_literal=False)
+        add_to_graph(g, author_, schema.name, author.name, datatype=XSD.string)
+        add_to_graph(g, author_, schema.givenName, author.given_name, datatype=XSD.string)
+        add_to_graph(g, author_, schema.familyName, author.family_name, datatype=XSD.string)
         if author.affiliations:
             for j, affiliation in enumerate(author.affiliations):
                 role = URIRef(bn + f"role_{gen_hash(author.name+affiliation.name)}")
@@ -118,7 +118,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
                     g, organization, RDF.type, frapo.Organization, to_literal=False
                 )
                 add_to_graph(
-                    g, organization, foaf.name, affiliation.name, datatype=XSD.string
+                    g, organization, schema.name, affiliation.name, datatype=XSD.string
                 )
         add_to_graph(g, authors, bn.hasItem, author_, to_literal=False)
         authors_processed.append(author_)
@@ -179,7 +179,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
             g, proceedings, RDF.type, fabio.ConferenceProceedings, to_literal=False
         )
         add_to_graph(
-            g, proceedings, foaf.name, article_data.conference.name, datatype=XSD.string
+            g, proceedings, schema.name, article_data.conference.name, datatype=XSD.string
         )
         add_to_graph(g, article, frbr.partOf, proceedings, to_literal=False)
 
@@ -247,9 +247,9 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         add_to_graph(g, article, fabio.embodiment, manifestation, to_literal=False)
 
         publisher = URIRef(bn + f"Publisher_{gen_hash(article_data.publisher)}")
-        add_to_graph(g, publisher, RDF.type, foaf.Organization, to_literal=False)
+        add_to_graph(g, publisher, RDF.type, schema.Organization, to_literal=False)
         add_to_graph(
-            g, publisher, foaf.name, article_data.publisher, datatype=XSD.string
+            g, publisher, schema.name, article_data.publisher, datatype=XSD.string
         )
         add_to_graph(g, manifestation, dc.publisher, publisher, to_literal=False)
 
