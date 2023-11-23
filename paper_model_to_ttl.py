@@ -39,16 +39,15 @@ def add_to_graph(g, subject, predicate, object_, datatype=None, to_literal=True)
 
 
 def gen_hash(input_string, length=9):
-
     if input_string is None:
         characters = string.ascii_letters + string.digits
-        short_hash = ''.join(random.choice(characters) for i in range(9))
+        short_hash = "".join(random.choice(characters) for i in range(9))
     else:
         sha256_hash = hashlib.sha256()
-        sha256_hash.update(input_string.encode('utf-8'))
+        sha256_hash.update(input_string.encode("utf-8"))
         full_hash = sha256_hash.hexdigest()
         short_hash = full_hash[:length]
-    
+
     return short_hash
 
 
@@ -68,9 +67,9 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         A RDF graph representing the information in the input dictionary.
     """
     g = Graph()
-    bn = Namespace("https://w3id.org/ocs/ont/papers/")
+    bn = Namespace("https://w3id.org/ocs/kg/papers/")
     datacite = Namespace("http://purl.org/spar/datacite/")
-    dc = Namespace("http://purl.org/dc/terms/") 
+    dc = Namespace("http://purl.org/dc/terms/")
     fabio = Namespace("http://purl.org/spar/fabio/")
     frapo = Namespace("http://purl.org/cerif/frapo/")
     frbr = Namespace("http://purl.org/vocab/frbr/core#")
@@ -101,9 +100,19 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     for i, author in enumerate(article_data.authors):
         author_ = URIRef(bn + f"author_{gen_hash(author.name)}")
         add_to_graph(g, author_, RDF.type, schema.Person, to_literal=False)
-        add_to_graph(g, author_, schema.name, author.given_name + " " + author.family_name, datatype=XSD.string)
-        add_to_graph(g, author_, schema.givenName, author.given_name, datatype=XSD.string)
-        add_to_graph(g, author_, schema.familyName, author.family_name, datatype=XSD.string)
+        add_to_graph(
+            g,
+            author_,
+            schema.name,
+            author.given_name + " " + author.family_name,
+            datatype=XSD.string,
+        )
+        add_to_graph(
+            g, author_, schema.givenName, author.given_name, datatype=XSD.string
+        )
+        add_to_graph(
+            g, author_, schema.familyName, author.family_name, datatype=XSD.string
+        )
         if author.affiliations:
             for j, affiliation in enumerate(author.affiliations):
                 role = URIRef(bn + f"role_{gen_hash(author.name+affiliation.name)}")
@@ -155,7 +164,9 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         add_to_graph(g, issue, RDF.type, fabio.JournalIssue, to_literal=False)
         add_to_graph(g, article, frbr.partOf, issue, to_literal=False)
 
-        volume = URIRef(bn + f"Journal_Volume_{gen_hash(article_data.url+article_data.volume)}")
+        volume = URIRef(
+            bn + f"Journal_Volume_{gen_hash(article_data.url+article_data.volume)}"
+        )
         add_to_graph(g, volume, RDF.type, fabio.JournalVolume, to_literal=False)
         add_to_graph(g, volume, prism.volume, article_data.volume, datatype=XSD.integer)
         add_to_graph(g, issue, frbr.partOf, volume, to_literal=False)
@@ -174,12 +185,18 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     elif article_data.paper_type == "ConferencePaper":
         article = URIRef(bn + f"Conference_Paper_{gen_hash(article_data.doi)}")
         add_to_graph(g, article, RDF.type, fabio.ConferencePaper, to_literal=False)
-        proceedings = URIRef(bn + f"Conference_Proceedings_{gen_hash(article_data.conference.name)}")
+        proceedings = URIRef(
+            bn + f"Conference_Proceedings_{gen_hash(article_data.conference.name)}"
+        )
         add_to_graph(
             g, proceedings, RDF.type, fabio.ConferenceProceedings, to_literal=False
         )
         add_to_graph(
-            g, proceedings, schema.name, article_data.conference.name, datatype=XSD.string
+            g,
+            proceedings,
+            schema.name,
+            article_data.conference.name,
+            datatype=XSD.string,
         )
         add_to_graph(g, article, frbr.partOf, proceedings, to_literal=False)
 
@@ -190,9 +207,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
             language = "en-US"
         else:
             language = article_data.language
-        add_to_graph(
-            g, article, dc.language, language, datatype=XSD.string
-        )
+        add_to_graph(g, article, dc.language, language, datatype=XSD.string)
 
     if article_data.license:
         add_to_graph(g, article, dc.license, article_data.license, datatype=XSD.anyURI)
@@ -226,7 +241,9 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     add_to_graph(g, article, owl.sameAs, URIRef(article_data.url), to_literal=False)
 
     if article_data.manifestation:
-        manifestation = URIRef(bn + f"Manifestation_{gen_hash(article_data.manifestation.has_url)}")
+        manifestation = URIRef(
+            bn + f"Manifestation_{gen_hash(article_data.manifestation.has_url)}"
+        )
         add_to_graph(
             g, manifestation, RDF.type, fabio.DigitalManifestation, to_literal=False
         )
