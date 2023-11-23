@@ -101,7 +101,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     for i, author in enumerate(article_data.authors):
         author_ = URIRef(bn + f"author_{gen_hash(author.name)}")
         add_to_graph(g, author_, RDF.type, schema.Person, to_literal=False)
-        add_to_graph(g, author_, schema.name, author.name, datatype=XSD.string)
+        add_to_graph(g, author_, schema.name, author.given_name + " " + author.family_name, datatype=XSD.string)
         add_to_graph(g, author_, schema.givenName, author.given_name, datatype=XSD.string)
         add_to_graph(g, author_, schema.familyName, author.family_name, datatype=XSD.string)
         if author.affiliations:

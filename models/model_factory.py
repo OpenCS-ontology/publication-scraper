@@ -9,11 +9,11 @@ def convert_to_int(s):
     if not s:
         return 0
 
-    s = s.upper()  # Convert to uppercase for case insensitivity
+    s = s.upper()
     roman_numerals = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 
     if s.isdigit():
-        return int(s)  # If the input is already an integer, return it
+        return int(s)
 
     result = 0
     prev_value = 0
