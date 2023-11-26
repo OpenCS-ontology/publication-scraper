@@ -10,8 +10,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 :paper_29c08decb a fabio:ResearchPaper ;
-    dc:creator [ :hasItem :author_5783FMwSn,
-                :author_IwtjUCNUi ] ;
+    dc:creator [ :hasItem :author_2f40a3077,
+                :author_e0c3dec80 ] ;
     dc:title "On (in)Validity of Aristotle's Syllogisms Relying on Rough Sets"^^xsd:string ;
     datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
             literal:hasLiteralValue "The authors investigate the properties of first-order logic having its semantics based on a generalized (partial) approximation of sets. The goal of the investigation in this article is to compare the classical first-order semantics with a partial and lower approximation-based one. The idea is that lower approximation represents the reliable knowledge, so the reasoning used by the lower approximation may be valid or may be valid with some limitations. First, the authors show an experimental result which confute the previous supposition and the result of an algorithm which generates refutations for some well-known valid arguments: the 12 syllogisms of Aristotle. We think that these syllogisms represent the most common usage of categorical statements. A  language with single-level quantification is constructed, as syllogisms can be formalized using this language. Based on the experimental results, the authors suggest some modifications of the semantics if the goal is to approximate the classical case."^^xsd:string ] ;
@@ -30,12 +30,12 @@
 :Conference_Proceedings_076c456b8 a fabio:ConferenceProceedings ;
     schema:name "1st Workshop on Logics for Qualitative Modelling and Reasoning"^^xsd:string .
 
-:author_5783FMwSn a schema:Person ;
+:author_2f40a3077 a schema:Person ;
     schema:familyName "Mihálydeák"^^xsd:string ;
     schema:givenName "Tamás"^^xsd:string ;
     schema:name "Tamás Mihálydeák"^^xsd:string .
 
-:author_IwtjUCNUi a schema:Person ;
+:author_e0c3dec80 a schema:Person ;
     schema:familyName "Kádek"^^xsd:string ;
     schema:givenName "Tamás"^^xsd:string ;
     schema:name "Tamás Kádek"^^xsd:string .

@@ -10,7 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 :paper_7550369c3 a fabio:ResearchPaper ;
-    dc:creator [ :hasItem :author_sTOvWOuEa ] ;
+    dc:creator [ :hasItem :author_8615ce94b ] ;
     dc:title "A Qualitative Model for Reasoning about 3D Objects using Depth and Different Perspectives"^^xsd:string ;
     datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
             literal:hasLiteralValue """A qualitative model for describing 3D objects (Q3D) using depth and different perspectives is presented in this paper. \r
@@ -34,7 +34,7 @@ The Q3D logics are implemented in Prolog and promising results are obtained, whi
 :Conference_Proceedings_076c456b8 a fabio:ConferenceProceedings ;
     schema:name "1st Workshop on Logics for Qualitative Modelling and Reasoning"^^xsd:string .
 
-:author_sTOvWOuEa a schema:Person ;
+:author_8615ce94b a schema:Person ;
     schema:familyName "Falomir"^^xsd:string ;
     schema:givenName "Zoe"^^xsd:string ;
     schema:name "Zoe Falomir"^^xsd:string .
