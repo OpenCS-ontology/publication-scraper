@@ -21,7 +21,7 @@ jobs:
           docker build -t scraper_image .
           docker run -d --name scraper-container scraper_image
 
-          sleep 10
+          sleep 20
 
       - name: Check if container runs properly
         run: |
