@@ -13,7 +13,6 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 WORKDIR /
 COPY ./ ./scraper
 WORKDIR /scraper
-COPY container_test /container_test
 
 RUN pip3 install wheel && \
     pip3 install -r /home/scrape/requirements.txt

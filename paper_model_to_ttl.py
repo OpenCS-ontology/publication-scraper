@@ -98,7 +98,9 @@ def convert_paper_model_to_graph(article_data: PaperModel):
 
     authors_processed = []
     for i, author in enumerate(article_data.authors):
-        author_ = URIRef(bn + f"author_{gen_hash(author.name)}")
+        author_ = URIRef(
+            bn + f"author_{gen_hash(author.given_name + ' ' + author.family_name)}"
+        )
         add_to_graph(g, author_, RDF.type, schema.Person, to_literal=False)
         add_to_graph(
             g,
