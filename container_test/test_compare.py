@@ -13,7 +13,7 @@ def are_graphs_equal(graph1, graph2):
 if __name__ == "__main__":
     archives = ["csis", "scpe"]
     input_path = "/scraper/output/ttls"
-    output_path = "/container_test/true_ttl"
+    output_path = "/scraper/container_test/true_ttl"
     for archive in archives:
         root_dir = os.path.join(input_path, archive)
         for dir in os.listdir(root_dir):
