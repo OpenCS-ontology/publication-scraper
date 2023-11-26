@@ -19,7 +19,7 @@ jobs:
       - name: Set up containers
         run: |
           docker build -t scraper_image .
-          docker run -d --name scraper-container scraper_image
+          docker run -t -d --name scraper-container scraper_image
 
           sleep 20
 
