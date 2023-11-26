@@ -1,0 +1,36 @@
+@prefix : <https://w3id.org/ocs/kg/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper_f0b84a319 a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_6zXrRqfa6 ] ;
+    dc:title "Parthood and Convexity as the Basic Notions of a Theory of Space"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "A deductive system of geometry is presented which is based on atomistic mereology (''mereology with points'') and the notion of convexity. The system is formulated in a liberal many-sorted logic which makes use of class-theoretic notions without however adopting any comprehension axioms. The geometry developed within this framework roughly corresponds to the``line spaces'' known from the literature. The basic ideas of the system are presented in the article's``Introduction'' within a historical context. After a brief presentation of the logical and mereological framework adopted, a ``pregeometry'' is described in which only the notion of convexity but no further axiom is added to that background framework. Pregeometry is extended to the full system in three steps. First the notion of a line segment is explained as the convex hull of the mereological sum of two points. In a second step two axioms are added which describe what it means for a thus determined line segment to be ``straight''. In the final step we deal with the order of points on a line segment and define the notion of a line. The presentation of the geometric system is concluded with a brief consideration of the geometrical principles known by the names of Peano and Pasch. Two additional topics are treated in short sections at the end of the article: (1) the introduction of coordinates and (2) the idea of a ``geometrical algebra''."^^xsd:string ] ;
+    frbr:realization :Conference_Paper_ff38e6ecf .
+
+:Conference_Paper_ff38e6ecf a fabio:ConferencePaper ;
+    prism:pageCount 13 ;
+    prism:publicationDate "2015-10-11"^^xsd:date ;
+    dc:language "en-US"^^xsd:string ;
+    dc:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2015F70"^^xsd:anyURI ;
+    fabio:hasURL "https://annals-csis.org/Volume_7/drp/70.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings_076c456b8 ;
+    owl:sameAs <https://annals-csis.org/Volume_7/drp/70.html> .
+
+:Conference_Proceedings_076c456b8 a fabio:ConferenceProceedings ;
+    schema:name "1st Workshop on Logics for Qualitative Modelling and Reasoning"^^xsd:string .
+
+:author_6zXrRqfa6 a schema:Person ;
+    schema:familyName "Robering"^^xsd:string ;
+    schema:givenName "Klaus"^^xsd:string ;
+    schema:name "Klaus Robering"^^xsd:string .
+

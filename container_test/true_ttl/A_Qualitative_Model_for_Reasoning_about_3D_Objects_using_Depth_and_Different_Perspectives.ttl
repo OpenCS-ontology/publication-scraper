@@ -1,0 +1,41 @@
+@prefix : <https://w3id.org/ocs/kg/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper_7550369c3 a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_sTOvWOuEa ] ;
+    dc:title "A Qualitative Model for Reasoning about 3D Objects using Depth and Different Perspectives"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue """A qualitative model for describing 3D objects (Q3D) using depth and different perspectives is presented in this paper. \r
+The front, right and up perspectives are considered as canonical. \r
+The Q3D model allow reasoning through logics defined to test the consistency of descriptions. \r
+The maximal volume of the object is also obtained logically using its Q3D description. \r
+Moreover, this model infers some features of the unknown perspectives of the object by defining logics based on the continuity of holes and the relative depth presented by opposite perspectives. \r
+The Q3D logics are implemented in Prolog and promising results are obtained, which can inspire approaches to solve 3D spatial problems computationally."""^^xsd:string ] ;
+    frbr:realization :Conference_Paper_947c5c3b0 .
+
+:Conference_Paper_947c5c3b0 a fabio:ConferencePaper ;
+    prism:pageCount 8 ;
+    prism:publicationDate "2015-10-11"^^xsd:date ;
+    dc:language "en-US"^^xsd:string ;
+    dc:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2015F370"^^xsd:anyURI ;
+    fabio:hasURL "https://annals-csis.org/Volume_7/drp/370.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings_076c456b8 ;
+    owl:sameAs <https://annals-csis.org/Volume_7/drp/370.html> .
+
+:Conference_Proceedings_076c456b8 a fabio:ConferenceProceedings ;
+    schema:name "1st Workshop on Logics for Qualitative Modelling and Reasoning"^^xsd:string .
+
+:author_sTOvWOuEa a schema:Person ;
+    schema:familyName "Falomir"^^xsd:string ;
+    schema:givenName "Zoe"^^xsd:string ;
+    schema:name "Zoe Falomir"^^xsd:string .
+

@@ -10,6 +10,27 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
+  container-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up containers
+        run: |
+          docker build -t scraper_image .
+          docker run -d --name scraper-container scraper_image
+
+          sleep 10
+
+      - name: Check if container runs properly
+        run: |
+          docker exec scraper-container bash /container_test/test_script.sh
+
+      - name: Clean up
+        run: |
+          docker stop scraper-container
+          docker rm  scraper-container
   build-and-push-image:
     runs-on: ubuntu-latest
     permissions:

@@ -1,0 +1,36 @@
+@prefix : <https://w3id.org/ocs/kg/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper_4a619a51f a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_UkMKCqkIg ] ;
+    dc:title "Using Mathematical Modeling as an Example of Qualitative Reasoning in Metaphysics. A Note on a Defense of the Theory of Ideas"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "This is an outline of a defense of the theory of Ideas. I propose-using  qualitative reasoning in metaphysics-the new incarnation of the theory of Ideas and I try to defend the theory against traditional counterarguments.  The starting point are  the theories of  Ideas of Plato and  Ingarden and an ontology of Ideas proposed by Kaczmarek; these theories are paraphrased-using a  modified method of semantic paraphrases  of  Ajdukiewicz                                                                                                                                              -and presented in terms of the basic concepts of category theory. To paraphrase Ideas as categories I   propose recognized category theory as a pattern for the theory of Ideas. This recognition-based on an analogy  between mathematical structures and philosophical structures-is the core of the qualitative reasoning  in metaphysics. It could  also be called a mathematical philosophy or mathematical modeling in metaphysics. I invoke an arrows-like, i.e. no-object-oriented, formulation of a  category and I base the proposed theory  of Ideas on that formulation. The components of an Idea are arrows and their compositions (equivalents of  changes and transformations); objects in this approach are special arrows namely the identity arrows. Using the category of higher dimensions I introduce the concept of the dimension of an Idea (and other concepts) which allows me to refute the argument of the ''third man''."^^xsd:string ] ;
+    frbr:realization :Conference_Paper_25ff5f02d .
+
+:Conference_Paper_25ff5f02d a fabio:ConferencePaper ;
+    prism:pageCount 3 ;
+    prism:publicationDate "2015-10-11"^^xsd:date ;
+    dc:language "en-US"^^xsd:string ;
+    dc:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2015F397"^^xsd:anyURI ;
+    fabio:hasURL "https://annals-csis.org/Volume_7/drp/397.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings_076c456b8 ;
+    owl:sameAs <https://annals-csis.org/Volume_7/drp/397.html> .
+
+:Conference_Proceedings_076c456b8 a fabio:ConferenceProceedings ;
+    schema:name "1st Workshop on Logics for Qualitative Modelling and Reasoning"^^xsd:string .
+
+:author_UkMKCqkIg a schema:Person ;
+    schema:familyName "Skowron"^^xsd:string ;
+    schema:givenName "Bartłomiej"^^xsd:string ;
+    schema:name "Bartłomiej Skowron"^^xsd:string .
+

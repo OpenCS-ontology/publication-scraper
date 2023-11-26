@@ -1,0 +1,70 @@
+@prefix : <https://w3id.org/ocs/kg/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper_c7ddeb70c a fabio:ResearchPaper ;
+    prism:keyword "Cluster Head Selection"^^xsd:string,
+        "Clustering"^^xsd:string,
+        "Energy Efficiency"^^xsd:string,
+        "Trust"^^xsd:string,
+        "Wireless Sensor Network"^^xsd:string ;
+    dc:created "2021-02-09"^^xsd:date ;
+    dc:creator [ :hasItem :author_7bf2942ed,
+                :author_b3130fa69 ] ;
+    dc:title "A Novel Approach for Cluster Head Selection using Trust Function in WSN"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "The enhancement of new technology in the sensor network shows a significant result in every aspect of life such as military surveillance, hospitals, mining and hospitals etc. The nodes are scattered randomly in RoI (Region of Interest) and data is transmitted to Base Station (BS) using the multi-hop technique. The Wireless Sensor Network (WSN) become an important research field for challenging problems as energy consumption, efficient cluster head selection process, routing algorithm, network strength, packet loss, energy loss and so forth. The agenda in the paper is to enhance Residual Energy (RE) of nodes and network lifetime. The problem is solved by using an efficient clustering and Cluster Head (CH) selection process.The cluster head selection is based on the maximum node residual energy and the minimum distance from the base station. The Proposed protocol worked in two stages. The new Threshold value T(H) is calculated for the cluster head selection process in the first stage. The data fusion method based on the trust function is used to get accurate data in the second stage. The energy model is utilized to reduce the excessive energy transmission inside the network. The Proposed protocol is compared with Stable Election Protocol and achieves 44% lifetime improvement, 59\\% stability improvement and 15% in survival rate respectively."^^xsd:string ] ;
+    frbr:realization :Journal_Article_487983786 .
+
+:Journal_8c1bf7d0c a fabio:Journal ;
+    frbr:part :Journal_Volume_5c683766a .
+
+:Journal_Article_487983786 a fabio:JournalArticle ;
+    prism:endingPage 13 ;
+    prism:pageCount 12 ;
+    prism:startingPage 1 ;
+    datacite:doi "10.12694/scpe.v22i1.1808"^^xsd:anyURI ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/1808"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue_1cc172e91 ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/1808> .
+
+:author_7bf2942ed a schema:Person ;
+    pro:holdsRoleInTime :role_4aa77ee77 ;
+    schema:familyName "Narayan"^^xsd:string ;
+    schema:givenName "Vipul"^^xsd:string ;
+    schema:name "Vipul Narayan"^^xsd:string .
+
+:author_b3130fa69 a schema:Person ;
+    pro:holdsRoleInTime :role_2dfb4dedd ;
+    schema:familyName "Daniel"^^xsd:string ;
+    schema:givenName "A. K."^^xsd:string ;
+    schema:name "A. K. Daniel"^^xsd:string .
+
+:role_2dfb4dedd a pro:RoleInTime ;
+    pro:relatesToOrganization :org_628a62c4f ;
+    pro:withRole pro:author .
+
+:role_4aa77ee77 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_628a62c4f ;
+    pro:withRole pro:author .
+
+:Journal_Issue_1cc172e91 a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume_5c683766a .
+
+:Journal_Volume_5c683766a a fabio:JournalVolume ;
+    prism:volume 22 ;
+    frbr:part :Journal_Issue_1cc172e91 ;
+    frbr:partOf :Journal_8c1bf7d0c .
+
+:org_628a62c4f a frapo:Organization ;
+    schema:name "Department of Computer Science and Engineering, Madan Mohan Malaviya University of Technology, Gorakhpur, India"^^xsd:string .
+

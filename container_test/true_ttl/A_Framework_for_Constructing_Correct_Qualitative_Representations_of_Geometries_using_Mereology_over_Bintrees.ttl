@@ -1,0 +1,43 @@
+@prefix : <https://w3id.org/ocs/kg/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper_1a7865ce5 a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_D4OhVt904,
+                :author_fWSAbUFqw ] ;
+    dc:title "A Framework for Constructing Correct Qualitative Representations of Geometries using Mereology over Bintrees"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue """In this paper we explore how bintrees can function as a suitable representation for mereological objects, and how such objects can be used to construct correct representations of geometries, with respect to qualitative queries constructed from a given set of mereological relations. We will show how these correct representations can be stored and queried by a traditional relational database using relational algebra, or similar tuple-based databases.\r
+"""^^xsd:string ] ;
+    frbr:realization :Conference_Paper_dd6e05f15 .
+
+:Conference_Paper_dd6e05f15 a fabio:ConferencePaper ;
+    prism:pageCount 12 ;
+    prism:publicationDate "2015-10-11"^^xsd:date ;
+    dc:language "en-US"^^xsd:string ;
+    dc:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2015F183"^^xsd:anyURI ;
+    fabio:hasURL "https://annals-csis.org/Volume_7/drp/183.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings_076c456b8 ;
+    owl:sameAs <https://annals-csis.org/Volume_7/drp/183.html> .
+
+:Conference_Proceedings_076c456b8 a fabio:ConferenceProceedings ;
+    schema:name "1st Workshop on Logics for Qualitative Modelling and Reasoning"^^xsd:string .
+
+:author_D4OhVt904 a schema:Person ;
+    schema:familyName "Karlsen"^^xsd:string ;
+    schema:givenName "Leif Harald"^^xsd:string ;
+    schema:name "Leif Harald Karlsen"^^xsd:string .
+
+:author_fWSAbUFqw a schema:Person ;
+    schema:familyName "Giese"^^xsd:string ;
+    schema:givenName "Martin"^^xsd:string ;
+    schema:name "Martin Giese"^^xsd:string .
+

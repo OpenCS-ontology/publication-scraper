@@ -1,0 +1,68 @@
+@prefix : <https://w3id.org/ocs/kg/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper_7cd9bd60d a fabio:ResearchPaper ;
+    prism:keyword "Application Checkpointing"^^xsd:string,
+        "Replicated State Machines"^^xsd:string,
+        "Serverless Computing"^^xsd:string ;
+    dc:created "2021-02-09"^^xsd:date ;
+    dc:creator [ :hasItem :author_59eb0e156,
+                :author_bfc07c8ba ] ;
+    dc:title "Distributed Application Checkpointing for Replicated State Machines"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "Application checkpointing is a widely used recovery mechanism that consists of saving an application's state periodically to be used in case of a failure. In this study we investigate the utilisation of distributed checkpointing for replicated state machines. Conventionally, for replicated state machines, checkpointing information is stored in a replicated way in each of the replicas or separately in a single instance. Applying distributed checkpointing provides a means to adjust the level of fault tolerance of the checkpointing approach by giving away from recovery time. We use a local cluster and cloud environment to examine the effects of distributed checkpointing in a simple state machine example and compare the results with conventional approaches. As expected, distributed checkpointing gains from memory consumption and utilise different levels of fault tolerance while performing worse in terms of recovery time."^^xsd:string ] ;
+    frbr:realization :Journal_Article_e64608e3f .
+
+:Journal_Article_e64608e3f a fabio:JournalArticle ;
+    prism:endingPage 79 ;
+    prism:pageCount 12 ;
+    prism:startingPage 67 ;
+    datacite:doi "10.12694/scpe.v22i1.1840"^^xsd:anyURI ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/1840"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue_9f388eac8 ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/1840> .
+
+:Journal_d25f5c4dc a fabio:Journal ;
+    frbr:part :Journal_Volume_bdb420307 .
+
+:author_59eb0e156 a schema:Person ;
+    pro:holdsRoleInTime :role_765c0ffe1 ;
+    schema:familyName "Çelikel"^^xsd:string ;
+    schema:givenName "Özdinç"^^xsd:string ;
+    schema:name "Özdinç Çelikel"^^xsd:string .
+
+:author_bfc07c8ba a schema:Person ;
+    pro:holdsRoleInTime :role_191fef319 ;
+    schema:familyName "Ovatman"^^xsd:string ;
+    schema:givenName "Tolga"^^xsd:string ;
+    schema:name "Tolga Ovatman"^^xsd:string .
+
+:role_191fef319 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_28100c302 ;
+    pro:withRole pro:author .
+
+:role_765c0ffe1 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_28100c302 ;
+    pro:withRole pro:author .
+
+:Journal_Issue_9f388eac8 a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume_bdb420307 .
+
+:Journal_Volume_bdb420307 a fabio:JournalVolume ;
+    prism:volume 22 ;
+    frbr:part :Journal_Issue_9f388eac8 ;
+    frbr:partOf :Journal_d25f5c4dc .
+
+:org_28100c302 a frapo:Organization ;
+    schema:name "Department of Computer Engineering, Istanbul Technical University, Turkey"^^xsd:string .
+

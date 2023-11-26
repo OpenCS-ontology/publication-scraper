@@ -1,0 +1,42 @@
+@prefix : <https://w3id.org/ocs/kg/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper_900546262 a fabio:ResearchPaper ;
+    dc:creator [ :hasItem :author_OvxDVMn8d,
+                :author_Q5QSModDO ] ;
+    dc:title "Encoding Relative Orientation and Mereotopology Relations with Geometric Constraints in CLP(QS)"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "One approach for encoding the semantics of spatial relations within a declarative programming framework is by systems of polynomial constraints. However, solving such constraints is computationally intractable in general (i.e. the theory of real-closed fields), and thus far the proposed symbolic algebraic methods do not scale to real world problems. In this paper we address this intractability by investigating the use of constructive geometric constraint solving (in combination with numerical optimisation) within the context of constraint logic programming over qualitative spaces, CLP(QS). We present novel geometric encodings for relative orientation and mereotopology relations and show that our encodings are significantly more robust than other proposed approaches for directly encoding inequalities, due to our encodings being based on a standard, well known set of relations encoded as quadratic equations. Our encodings are general (i.e. not implementation specific) and can thus be directly employed in all standard geometric constraint solvers, particularly solvers that are prominent within the Computer Aided Design and Manufacturing communities. We empirically evaluate our approach on a range of benchmark problems from the Qualitative Spatial Reasoning community, and show that our method outperforms other symbolic algebraic approaches to spatial reasoning by orders of magnitude on those benchmark problems (such as Cylindrical Algebraic Decomposition)."^^xsd:string ] ;
+    frbr:realization :Conference_Paper_641201be4 .
+
+:Conference_Paper_641201be4 a fabio:ConferencePaper ;
+    prism:pageCount 8 ;
+    prism:publicationDate "2015-10-11"^^xsd:date ;
+    dc:language "en-US"^^xsd:string ;
+    dc:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    datacite:doi "http://dx.doi.org/10.15439/2015F371"^^xsd:anyURI ;
+    fabio:hasURL "https://annals-csis.org/Volume_7/drp/371.html"^^xsd:anyURI ;
+    frbr:partOf :Conference_Proceedings_076c456b8 ;
+    owl:sameAs <https://annals-csis.org/Volume_7/drp/371.html> .
+
+:Conference_Proceedings_076c456b8 a fabio:ConferenceProceedings ;
+    schema:name "1st Workshop on Logics for Qualitative Modelling and Reasoning"^^xsd:string .
+
+:author_OvxDVMn8d a schema:Person ;
+    schema:familyName "Bhatt"^^xsd:string ;
+    schema:givenName "Mehul"^^xsd:string ;
+    schema:name "Mehul Bhatt"^^xsd:string .
+
+:author_Q5QSModDO a schema:Person ;
+    schema:familyName "Schultz"^^xsd:string ;
+    schema:givenName "Carl"^^xsd:string ;
+    schema:name "Carl Schultz"^^xsd:string .
+

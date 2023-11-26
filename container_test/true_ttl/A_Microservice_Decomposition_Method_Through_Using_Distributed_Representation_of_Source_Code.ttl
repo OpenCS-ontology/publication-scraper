@@ -1,0 +1,68 @@
+@prefix : <https://w3id.org/ocs/kg/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper_e5e40474a a fabio:ResearchPaper ;
+    prism:keyword "microservices"^^xsd:string,
+        "microservices decomposition"^^xsd:string,
+        "refactoring"^^xsd:string ;
+    dc:created "2021-02-09"^^xsd:date ;
+    dc:creator [ :hasItem :author_df38cb46d,
+                :author_fcf3a846e ] ;
+    dc:title "A Microservice Decomposition Method Through Using Distributed Representation of Source Code"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "This research proposed a novel decomposition method for refactoring monolithic applications into microservices applications using a neural network model (code2vec) for creating code embeddings from the monolithic application source code. As a Result, semantically similar code embeddings are clustered through a hierarchical clustering algorithm to produce microservices candidates to resemble the domain model more efficiently. The quality characteristics of the results were measured using two metrics for measuring cohesion. These metrics were Cohesion at Message Level (CHM) and Cohesion at Domain Level (CHD). Also, four applications were used as test cases with different sizes ranging from small to big applications. The proposed method showed promising results in terms of cohesion when compared to other decomposition methods. The proposed method scored better scores in 5 out of 8 tests compared to other methods. Also, averaged CHD and CHM results were 0.52 and 0.76, respectively, for the proposed method, better results when compared to the other methods."^^xsd:string ] ;
+    frbr:realization :Journal_Article_27cf082c0 .
+
+:Journal_Article_27cf082c0 a fabio:JournalArticle ;
+    prism:endingPage 52 ;
+    prism:pageCount 13 ;
+    prism:startingPage 39 ;
+    datacite:doi "10.12694/scpe.v22i1.1836"^^xsd:anyURI ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/1836"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue_d15ff6f18 ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/1836> .
+
+:Journal_f99f2c6d9 a fabio:Journal ;
+    frbr:part :Journal_Volume_76b2f9883 .
+
+:author_df38cb46d a schema:Person ;
+    pro:holdsRoleInTime :role_9dc31b897 ;
+    schema:familyName "Al-Debagy"^^xsd:string ;
+    schema:givenName "Omar"^^xsd:string ;
+    schema:name "Omar Al-Debagy"^^xsd:string .
+
+:author_fcf3a846e a schema:Person ;
+    pro:holdsRoleInTime :role_6dc4d535c ;
+    schema:familyName "Martinek"^^xsd:string ;
+    schema:givenName "Peter"^^xsd:string ;
+    schema:name "Peter Martinek"^^xsd:string .
+
+:role_6dc4d535c a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0e6b6a3cd ;
+    pro:withRole pro:author .
+
+:role_9dc31b897 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_0e6b6a3cd ;
+    pro:withRole pro:author .
+
+:Journal_Issue_d15ff6f18 a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume_76b2f9883 .
+
+:Journal_Volume_76b2f9883 a fabio:JournalVolume ;
+    prism:volume 22 ;
+    frbr:part :Journal_Issue_d15ff6f18 ;
+    frbr:partOf :Journal_f99f2c6d9 .
+
+:org_0e6b6a3cd a frapo:Organization ;
+    schema:name "Department of Electronics Technology, Budapest University of Technology and Economics, Budapest, Hungary"^^xsd:string .
+

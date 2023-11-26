@@ -1,0 +1,91 @@
+@prefix : <https://w3id.org/ocs/kg/papers/> .
+@prefix datacite: <http://purl.org/spar/datacite/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frapo: <http://purl.org/cerif/frapo/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix literal: <http://www.essepuntato.it/2010/06/literalreification/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prism: <http://prismstandard.org/namespaces/basic/2.0/> .
+@prefix pro: <http://purl.org/spar/pro/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:paper_969c788bb a fabio:ResearchPaper ;
+    prism:keyword "Coverage"^^xsd:string,
+        "Energy Efficient"^^xsd:string,
+        "Sleep Scheduling"^^xsd:string,
+        "Wireless Sensor Network"^^xsd:string ;
+    dc:created "2021-02-09"^^xsd:date ;
+    dc:creator [ :hasItem :author_39409c0fd,
+                :author_75987c47d,
+                :author_b093aaf13,
+                :author_cee4670b5 ] ;
+    dc:title "Improved Localized Sleep Scheduling Techniques to Prolong WSN Lifetime"^^xsd:string ;
+    datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
+            literal:hasLiteralValue "A standard Wireless Sensor Networks(WSNs) comprises of low-cost sensor nodes embedded with small batteries. To enhance the network lifetime of WSN, the number of active nodes among the deployed nodes should be minimum. Along with this, it must be ensured that coverage of the targeted area would not get affected by the currently active nodes. Considering different applications of WSN, there is still a demand for full coverage or partial coverage of the deployed area. Irrespective of the circumstances, a proper sleep scheduling algorithm needs to be followed. Else, the active nodes will be tuckered out of the battery. Random distribution of the sensor nodes in a common area may have multiple active nodes. It is essential to identify the redundant number of active nodes and put them into sleep to conserve energy. This paper has proposed a methodology where the active sensor nodes form a hierarchical structure that heals itself by following a level-wise approach. In the meantime, it also detects the total number of redundant nodes in the coverage area. The performance of the proposed protocol is evaluated using the Castalia simulator. The simulation results show that the proposed level-wise periodic tree construction approach increases the network's durability in conjunction with the level wise approach."^^xsd:string ] ;
+    frbr:realization :Journal_Article_49fe570f4 .
+
+:Journal_Article_49fe570f4 a fabio:JournalArticle ;
+    prism:endingPage 92 ;
+    prism:pageCount 11 ;
+    prism:startingPage 81 ;
+    datacite:doi "10.12694/scpe.v22i1.1847"^^xsd:anyURI ;
+    fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/1847"^^xsd:anyURI ;
+    frbr:partOf :Journal_Issue_156669b1b ;
+    owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/1847> .
+
+:Journal_c4ccb651b a fabio:Journal ;
+    frbr:part :Journal_Volume_fbb89698a .
+
+:author_39409c0fd a schema:Person ;
+    pro:holdsRoleInTime :role_de7fcc2e5 ;
+    schema:familyName "Roy"^^xsd:string ;
+    schema:givenName "Soham"^^xsd:string ;
+    schema:name "Soham Roy"^^xsd:string .
+
+:author_75987c47d a schema:Person ;
+    pro:holdsRoleInTime :role_8581a3682 ;
+    schema:familyName "Kar"^^xsd:string ;
+    schema:givenName "Udit Narayana"^^xsd:string ;
+    schema:name "Udit Narayana Kar"^^xsd:string .
+
+:author_b093aaf13 a schema:Person ;
+    pro:holdsRoleInTime :role_7874e9207 ;
+    schema:familyName "Swain"^^xsd:string ;
+    schema:givenName "Amulya Ratna"^^xsd:string ;
+    schema:name "Amulya Ratna Swain"^^xsd:string .
+
+:author_cee4670b5 a schema:Person ;
+    pro:holdsRoleInTime :role_f8739ed62 ;
+    schema:familyName "Tarasia"^^xsd:string ;
+    schema:givenName "Nachiketa"^^xsd:string ;
+    schema:name "Nachiketa Tarasia"^^xsd:string .
+
+:role_7874e9207 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_89cfa45cf ;
+    pro:withRole pro:author .
+
+:role_8581a3682 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_89cfa45cf ;
+    pro:withRole pro:author .
+
+:role_de7fcc2e5 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_89cfa45cf ;
+    pro:withRole pro:author .
+
+:role_f8739ed62 a pro:RoleInTime ;
+    pro:relatesToOrganization :org_89cfa45cf ;
+    pro:withRole pro:author .
+
+:Journal_Issue_156669b1b a fabio:JournalIssue ;
+    frbr:partOf :Journal_Volume_fbb89698a .
+
+:Journal_Volume_fbb89698a a fabio:JournalVolume ;
+    prism:volume 22 ;
+    frbr:part :Journal_Issue_156669b1b ;
+    frbr:partOf :Journal_c4ccb651b .
+
+:org_89cfa45cf a frapo:Organization ;
+    schema:name "KIIT Deemed to be University, Bhubaneswar, India"^^xsd:string .
+
