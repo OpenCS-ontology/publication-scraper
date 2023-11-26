@@ -40,8 +40,5 @@ if __name__ == "__main__":
 
                         g1.parse(final_in_path, format="ttl")
                         g2.parse(final_out_path, format="ttl")
-                        print(
-                            "Comparing true Turtle file with the one created during current version test"
-                        )
                         assert are_graphs_equal(g1, g2)
-        print(f"Test with {ttl_file} passed!")
+                    print(f"Test with {ttl_file} passed!")
