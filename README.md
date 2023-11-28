@@ -1,6 +1,5 @@
 # Publication scraper
-
-This component is responsible for scraping information about articles from SCPE and FedCSIS archives and creating Turtle files that include fundamental article details such as authors, title, abstract, publication date, etc. It also downloads the articles in PDF format for possible further processing.
+Descirption of this module is available in [OpenCS wiki](https://github.com/OpenCS-ontology/OpenCS/wiki/KG-pipeline)
 
 ## Authors
 
