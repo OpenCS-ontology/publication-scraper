@@ -1,5 +1,5 @@
 # Publication scraper
-Descirption of this module is available in [OpenCS wiki](https://github.com/OpenCS-ontology/OpenCS/wiki/KG-pipeline](https://github.com/OpenCS-ontology/OpenCS/wiki/KG-pipeline#publication-scraper)
+Descirption of this module is available in [OpenCS wiki](https://github.com/OpenCS-ontology/OpenCS/wiki/KG-pipeline#publication-scraper)
 
 ## Authors
 
