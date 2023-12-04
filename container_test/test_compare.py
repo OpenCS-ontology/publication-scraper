@@ -41,4 +41,4 @@ if __name__ == "__main__":
                         g1.parse(final_in_path, format="ttl")
                         g2.parse(final_out_path, format="ttl")
                         assert are_graphs_equal(g1, g2)
-                    print(f"Test with {ttl_file} passed!")
+                    print(f"File: {ttl_file} passed the test!")
