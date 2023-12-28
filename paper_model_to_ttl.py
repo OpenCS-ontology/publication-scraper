@@ -77,6 +77,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     prism = Namespace("http://prismstandard.org/namespaces/basic/2.0/")
     pro = Namespace("http://purl.org/spar/pro/")
     schema = Namespace("http://schema.org/")
+    ocs_papers = Namespace("https://w3id.org/ocs/ont/papers/")
     owl = Namespace("http://www.w3.org/2002/07/owl#")
 
     g.bind("", bn)
@@ -89,6 +90,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     g.bind("prism", prism)
     g.bind("pro", pro)
     g.bind("schema", schema)
+    g.bind("ocs_papers", ocs_papers)
     g.bind("owl", owl)
 
     paper = Literal(article_data.title)

@@ -62,8 +62,8 @@ def create_author_model(
         name=doi_api_author.name
         if doi_api_author is not None and doi_api_author.name is not None
         else (scraper_author.name if scraper_author is not None else None),
-        family_name=None if doi_api_author is None else doi_api_author.family_name,
-        given_name=None if doi_api_author is None else doi_api_author.given_name,
+        family_name='' if doi_api_author is None else str(doi_api_author.family_name or ''),
+        given_name='' if doi_api_author is None else str(doi_api_author.given_name or ''),
         orcid=doi_api_author.orcid
         if doi_api_author is not None and doi_api_author.orcid is not None
         else (scraper_author.fallback_orcid if scraper_author is not None else None),
