@@ -18,8 +18,8 @@
         "machine learning"^^xsd:string,
         "sentiment analysis"^^xsd:string ;
     dc:created "2021-02-09"^^xsd:date ;
-    dc:creator [ :hasItem :author_abf59c744,
-                :author_fc9c9f8b3 ] ;
+    dc:creator :author_abf59c744,
+        :author_fc9c9f8b3 ;
     dc:title "A Novel Sentiment Analysis for Amazon Data with TSA based Feature Selection"^^xsd:string ;
     datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
             literal:hasLiteralValue "Sentiment analysis of online product reviews has become a mainstream way for businesses on e-commerce platforms to promote their products and improve user satisfaction. Hence, it is necessary to construct an automatic sentiment analyser for automatic identification of sentiment polarity of the online product reviews. Traditional lexicon-based approaches used for sentiment analysis suffered from several accuracy issues while machine learning techniques require labelled training data. This paper introduces a hybrid sentiment analysis framework to bond the gap between both machine learning and lexicon-based approaches. A novel tunicate swarm algorithm (TSA) based feature reduction is integrated with the proposed hybrid method to solve the scalability issue that arises due to a large feature set. It reduces the feature set size to 43% without changing the accuracy (93%). Besides, it improves the scalability, reduces the computation time and enhances the overall performance of the proposed framework. From experimental analysis, it can be observed that TSA outperforms existing feature selection techniques such as particle swarm optimization and genetic algorithm. Moreover, the proposed approach is analysed with performance metrics such as recall, precision, F1-score, feature size and computation time."^^xsd:string ] ;

@@ -10,10 +10,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 :paper_8f620bc97 a fabio:ResearchPaper ;
-    dc:creator [ :hasItem :author_20da66fd4,
-                :author_74ad29ee3,
-                :author_77cdfd800,
-                :author_f11c021e5 ] ;
+    dc:creator :author_20da66fd4,
+        :author_74ad29ee3,
+        :author_77cdfd800,
+        :author_f11c021e5 ;
     dc:title "Spatial Rules for Capturing Qualitatively Equivalent Configurations in Sketch maps"^^xsd:string ;
     datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
             literal:hasLiteralValue "Sketch maps are an externalization of an individual's mental images of an environment. The information represented in sketch maps is schematized, distorted, generalized, and thus processing spatial information in sketch maps requires plausible representations based on human cognition. Typically only qualitative relations between spatial objects are persevered in sketch maps, and therefore processing spatial information on a qualitative level has been suggested. This study extends our previous work on qualitative representations and alignment of sketch maps.  In this study, we define a set of spatial relations using the declarative spatial reasoning system CLP(QS) as an approach to formalizing key spatial aspects that are preserved in sketch maps. Unlike geo-referenced maps, sketch maps do not have a single, global reference frame. Rather, the sketched elements themselves act as referencing objects. Using CLP(QS), we define constraint logic programming rules that formalize various key spatial aspects of sketch maps at a local level, between nearby objects.  These rules focus on linear ordering, cyclic ordering, and relative orientation of depicted objects along, and around, salient reference objects."^^xsd:string ] ;

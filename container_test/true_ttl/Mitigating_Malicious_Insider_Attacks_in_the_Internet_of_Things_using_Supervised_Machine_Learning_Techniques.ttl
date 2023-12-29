@@ -18,8 +18,8 @@
         "security"^^xsd:string,
         "supervised machine learning"^^xsd:string ;
     dc:created "2021-02-09"^^xsd:date ;
-    dc:creator [ :hasItem :author_509f72ccc,
-                :author_8f24424b3 ] ;
+    dc:creator :author_509f72ccc,
+        :author_8f24424b3 ;
     dc:title "Mitigating Malicious Insider Attacks in the Internet of Things using Supervised Machine Learning Techniques"^^xsd:string ;
     datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
             literal:hasLiteralValue "The interconnection of large number of smart devices and sensors for critical information gathering and analysis over the internet has given rise to the Internet of Things (IoT) network. In recent times, IoT has emerged as a prime field for solving diverse real-life problems by providing a smart and affordable solutions. The IoT network has various constraints like: limited computational capacity of sensors, heterogeneity of devices, limited energy resource and bandwidth etc. These constraints restrict the use of high-end security mechanisms, thus making these type of networks more vulnerable to various security attacks including malicious insider attacks. Also, it is very difficult to detect such malicious insiders in the network due to their unpredictable behaviour and the ubiquitous nature of IoT network makes the task more difficult. To solve such problems machine learning techniques can be used as they have the ability to learn the behaviour of the system and predict the particular anomaly in the system. So, in this paper we have discussed various security requirements and challenges in the IoT network. We have also applied various supervised machine learning techniques on available IoT dataset to deduce which among them is best suited to detect the malicious insider attacks in the IoT network."^^xsd:string ] ;

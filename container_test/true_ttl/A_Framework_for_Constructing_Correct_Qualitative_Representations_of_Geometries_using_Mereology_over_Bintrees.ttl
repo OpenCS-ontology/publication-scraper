@@ -10,8 +10,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 :paper_1a7865ce5 a fabio:ResearchPaper ;
-    dc:creator [ :hasItem :author_0a8629b8d,
-                :author_cfda44d53 ] ;
+    dc:creator :author_0a8629b8d,
+        :author_cfda44d53 ;
     dc:title "A Framework for Constructing Correct Qualitative Representations of Geometries using Mereology over Bintrees"^^xsd:string ;
     datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
             literal:hasLiteralValue """In this paper we explore how bintrees can function as a suitable representation for mereological objects, and how such objects can be used to construct correct representations of geometries, with respect to qualitative queries constructed from a given set of mereological relations. We will show how these correct representations can be stored and queried by a traditional relational database using relational algebra, or similar tuple-based databases.\r

@@ -17,10 +17,10 @@
         "Sleep Scheduling"^^xsd:string,
         "Wireless Sensor Network"^^xsd:string ;
     dc:created "2021-02-09"^^xsd:date ;
-    dc:creator [ :hasItem :author_39409c0fd,
-                :author_75987c47d,
-                :author_b093aaf13,
-                :author_cee4670b5 ] ;
+    dc:creator :author_39409c0fd,
+        :author_75987c47d,
+        :author_b093aaf13,
+        :author_cee4670b5 ;
     dc:title "Improved Localized Sleep Scheduling Techniques to Prolong WSN Lifetime"^^xsd:string ;
     datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
             literal:hasLiteralValue "A standard Wireless Sensor Networks(WSNs) comprises of low-cost sensor nodes embedded with small batteries. To enhance the network lifetime of WSN, the number of active nodes among the deployed nodes should be minimum. Along with this, it must be ensured that coverage of the targeted area would not get affected by the currently active nodes. Considering different applications of WSN, there is still a demand for full coverage or partial coverage of the deployed area. Irrespective of the circumstances, a proper sleep scheduling algorithm needs to be followed. Else, the active nodes will be tuckered out of the battery. Random distribution of the sensor nodes in a common area may have multiple active nodes. It is essential to identify the redundant number of active nodes and put them into sleep to conserve energy. This paper has proposed a methodology where the active sensor nodes form a hierarchical structure that heals itself by following a level-wise approach. In the meantime, it also detects the total number of redundant nodes in the coverage area. The performance of the proposed protocol is evaluated using the Castalia simulator. The simulation results show that the proposed level-wise periodic tree construction approach increases the network's durability in conjunction with the level wise approach."^^xsd:string ] ;

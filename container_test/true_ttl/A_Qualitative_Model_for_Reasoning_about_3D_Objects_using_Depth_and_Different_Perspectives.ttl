@@ -10,7 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 :paper_7550369c3 a fabio:ResearchPaper ;
-    dc:creator [ :hasItem :author_8615ce94b ] ;
+    dc:creator :author_8615ce94b ;
     dc:title "A Qualitative Model for Reasoning about 3D Objects using Depth and Different Perspectives"^^xsd:string ;
     datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
             literal:hasLiteralValue """A qualitative model for describing 3D objects (Q3D) using depth and different perspectives is presented in this paper. \r

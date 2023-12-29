@@ -16,8 +16,8 @@
         "Replicated State Machines"^^xsd:string,
         "Serverless Computing"^^xsd:string ;
     dc:created "2021-02-09"^^xsd:date ;
-    dc:creator [ :hasItem :author_59eb0e156,
-                :author_bfc07c8ba ] ;
+    dc:creator :author_59eb0e156,
+        :author_bfc07c8ba ;
     dc:title "Distributed Application Checkpointing for Replicated State Machines"^^xsd:string ;
     datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
             literal:hasLiteralValue "Application checkpointing is a widely used recovery mechanism that consists of saving an application's state periodically to be used in case of a failure. In this study we investigate the utilisation of distributed checkpointing for replicated state machines. Conventionally, for replicated state machines, checkpointing information is stored in a replicated way in each of the replicas or separately in a single instance. Applying distributed checkpointing provides a means to adjust the level of fault tolerance of the checkpointing approach by giving away from recovery time. We use a local cluster and cloud environment to examine the effects of distributed checkpointing in a simple state machine example and compare the results with conventional approaches. As expected, distributed checkpointing gains from memory consumption and utilise different levels of fault tolerance while performing worse in terms of recovery time."^^xsd:string ] ;

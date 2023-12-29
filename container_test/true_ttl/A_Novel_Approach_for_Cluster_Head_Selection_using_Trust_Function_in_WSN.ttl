@@ -18,8 +18,8 @@
         "Trust"^^xsd:string,
         "Wireless Sensor Network"^^xsd:string ;
     dc:created "2021-02-09"^^xsd:date ;
-    dc:creator [ :hasItem :author_7bf2942ed,
-                :author_b3130fa69 ] ;
+    dc:creator :author_7bf2942ed,
+        :author_b3130fa69 ;
     dc:title "A Novel Approach for Cluster Head Selection using Trust Function in WSN"^^xsd:string ;
     datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
             literal:hasLiteralValue "The enhancement of new technology in the sensor network shows a significant result in every aspect of life such as military surveillance, hospitals, mining and hospitals etc. The nodes are scattered randomly in RoI (Region of Interest) and data is transmitted to Base Station (BS) using the multi-hop technique. The Wireless Sensor Network (WSN) become an important research field for challenging problems as energy consumption, efficient cluster head selection process, routing algorithm, network strength, packet loss, energy loss and so forth. The agenda in the paper is to enhance Residual Energy (RE) of nodes and network lifetime. The problem is solved by using an efficient clustering and Cluster Head (CH) selection process.The cluster head selection is based on the maximum node residual energy and the minimum distance from the base station. The Proposed protocol worked in two stages. The new Threshold value T(H) is calculated for the cluster head selection process in the first stage. The data fusion method based on the trust function is used to get accurate data in the second stage. The energy model is utilized to reduce the excessive energy transmission inside the network. The Proposed protocol is compared with Stable Election Protocol and achieves 44% lifetime improvement, 59\\% stability improvement and 15% in survival rate respectively."^^xsd:string ] ;

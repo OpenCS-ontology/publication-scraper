@@ -18,10 +18,10 @@
         "Traffic Engineering"^^xsd:string,
         "Traffic Matrix"^^xsd:string ;
     dc:created "2021-02-09"^^xsd:date ;
-    dc:creator [ :hasItem :author_962e81ea4,
-                :author_b2a099769,
-                :author_cd2965c6b,
-                :author_dafe8004b ] ;
+    dc:creator :author_962e81ea4,
+        :author_b2a099769,
+        :author_cd2965c6b,
+        :author_dafe8004b ;
     dc:title "Estimation of Traffic Matrix from Links Load using Genetic Algorithm"^^xsd:string ;
     datacite:hasDescription [ datacite:hasDescriptionType datacite:abstract ;
             literal:hasLiteralValue "Traffic Matrix (TM) is a representation of all traffic flows in a network. It is helpful for traffic engineering and network management. It contains the traffic measurement for all parts of a network and thus for larger network it is difficult to measure precisely. Link load are easily obtainable but they fail to provide a complete TM representation. Also link load and TM relationship forms an under-determined system with infinite set of solutions. One of the well known traffic models Gravity model provides a rough estimation of the TM. We have proposed a Genetic algorithm (GA) based optimization method to further the solutions of the Gravity model. The Gravity model is applied as an initial solution and then GA model is applied taking the link load-TM relationship as a objective function. Results shows improvement over Gravity model."^^xsd:string ] ;
