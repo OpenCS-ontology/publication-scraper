@@ -151,8 +151,10 @@ def main():
         pdf_path = f"/scraper/output/pdfs/{archive}"
         ttl_path = f"/scraper/output/ttls/{archive}"
 
-        shutil.rmtree(pdf_path)
-        shutil.rmtree(ttl_path)
+        if os.path.exists(pdf_path):
+            shutil.rmtree(pdf_path)
+        if os.path.exists(ttl_path):
+            shutil.rmtree(ttl_path)
 
         os.mkdir(pdf_path)
         os.mkdir(ttl_path)

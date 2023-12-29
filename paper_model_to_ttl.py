@@ -96,8 +96,6 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     paper = Literal(article_data.title)
     paper = URIRef(bn + f"paper_{gen_hash(article_data.abstract_text)}")
 
-    authors = BNode()
-
     authors_processed = []
     for i, author in enumerate(article_data.authors):
         author_ = URIRef(
@@ -133,11 +131,10 @@ def convert_paper_model_to_graph(article_data: PaperModel):
                 add_to_graph(
                     g, organization, schema.name, affiliation.name, datatype=XSD.string
                 )
-        add_to_graph(g, authors, bn.hasItem, author_, to_literal=False)
+        add_to_graph(g, paper, dc.creator, author_, to_literal=False)
         authors_processed.append(author_)
 
     add_to_graph(g, paper, RDF.type, fabio.ResearchPaper, to_literal=False)
-    add_to_graph(g, paper, dc.creator, authors, to_literal=False)
     add_to_graph(g, paper, dc.title, article_data.title, datatype=XSD.string)
 
     if article_data.date_created:
@@ -268,7 +265,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         add_to_graph(g, article, fabio.embodiment, manifestation, to_literal=False)
 
         publisher = URIRef(bn + f"Publisher_{gen_hash(article_data.publisher)}")
-        add_to_graph(g, publisher, RDF.type, schema.Organization, to_literal=False)
+        add_to_graph(g, publisher, RDF.type, frapo.Organization, to_literal=False)
         add_to_graph(
             g, publisher, schema.name, article_data.publisher, datatype=XSD.string
         )
