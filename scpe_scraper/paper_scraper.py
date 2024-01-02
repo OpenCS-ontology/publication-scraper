@@ -125,10 +125,11 @@ def scrape_issue(
 
     urls_paper = map(lambda l: l.attrs["href"], links_paper)
     for url_paper in tqdm.tqdm(urls_paper, total=len(links_paper)):
-        try:
-            scrape_paper(scraped_article_info, "https:" + url_paper)
-        except:
-            print(f"Processing paper {url_paper} failed")
+        scrape_paper(scraped_article_info, "https:" + url_paper)
+        # try:
+        #     scrape_paper(scraped_article_info, "https:" + url_paper)
+        # except:
+        #     print(f"Processing paper {url_paper} failed")
 
 
 def scrape_paper(
@@ -267,7 +268,8 @@ def scrape_paper(
     )
     scraped_article_info.append(scraped)
 
-    try:
+
+    if scraped.pdf_url:
         response = requests.get(scraped.pdf_url)
         pdf_dir = f"./output/pdfs/scpe/volume_{scraped.fallback_volume}"
         pdf_filename = scraped.fallback_title.replace(" ", "_") + ".pdf"
@@ -276,5 +278,3 @@ def scrape_paper(
             os.mkdir(pdf_dir)
         with open(os.path.join(pdf_dir, pdf_filename), "wb") as f:
             f.write(response.content)
-    except:
-        raise Exception(f"Paper {{ {url_paper} }} download error")

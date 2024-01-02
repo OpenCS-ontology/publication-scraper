@@ -39,7 +39,7 @@ def add_to_graph(g, subject, predicate, object_, datatype=None, to_literal=True)
 
 
 def gen_hash(input_string, length=9):
-    if input_string is None:
+    if input_string is None or input_string == '':
         characters = string.ascii_letters + string.digits
         short_hash = "".join(random.choice(characters) for i in range(9))
     else:
@@ -98,6 +98,8 @@ def convert_paper_model_to_graph(article_data: PaperModel):
 
     authors_processed = []
     for i, author in enumerate(article_data.authors):
+        if author.given_name == '' and author.family_name == '':
+            continue
         author_ = URIRef(
             bn + f"author_{gen_hash(author.given_name + ' ' + author.family_name)}"
         )
@@ -137,6 +139,11 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     add_to_graph(g, paper, RDF.type, fabio.ResearchPaper, to_literal=False)
     add_to_graph(g, paper, dc.title, article_data.title, datatype=XSD.string)
 
+    if not article_data.doi:
+        doi = ''
+    else:
+        doi = article_data.doi
+
     if article_data.date_created:
         add_to_graph(g, paper, dc.created, article_data.date_created, datatype=XSD.date)
 
@@ -158,10 +165,10 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     )
 
     if article_data.paper_type == "JournalArticle":
-        article = URIRef(bn + f"Journal_Article_{gen_hash(article_data.doi)}")
+        article = URIRef(bn + f"Journal_Article_{gen_hash(doi)}")
         add_to_graph(g, article, RDF.type, fabio.JournalArticle, to_literal=False)
 
-        issue = URIRef(bn + f"Journal_Issue_{gen_hash(article_data.doi+'issue')}")
+        issue = URIRef(bn + f"Journal_Issue_{gen_hash(doi+'issue')}")
         add_to_graph(g, issue, RDF.type, fabio.JournalIssue, to_literal=False)
         add_to_graph(g, article, frbr.partOf, issue, to_literal=False)
 
@@ -184,7 +191,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         add_to_graph(g, journal, frbr.part, volume, to_literal=False)
 
     elif article_data.paper_type == "ConferencePaper":
-        article = URIRef(bn + f"Conference_Paper_{gen_hash(article_data.doi)}")
+        article = URIRef(bn + f"Conference_Paper_{gen_hash(doi)}")
         add_to_graph(g, article, RDF.type, fabio.ConferencePaper, to_literal=False)
         proceedings = URIRef(
             bn + f"Conference_Proceedings_{gen_hash(article_data.conference.name)}"
@@ -215,6 +222,9 @@ def convert_paper_model_to_graph(article_data: PaperModel):
 
     add_to_graph(g, article, fabio.hasURL, article_data.url, datatype=XSD.anyURI)
 
+    if doi != '':
+        add_to_graph(g, article, prism.doi, doi, datatype=XSD.anyURI)
+
     if article_data.publication_date:
         add_to_graph(
             g,
@@ -236,9 +246,7 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         add_to_graph(
             g, article, prism.pageCount, article_data.page_count, datatype=XSD.integer
         )
-
-    add_to_graph(g, article, datacite.doi, article_data.doi, datatype=XSD.anyURI)
-
+    
     add_to_graph(g, article, owl.sameAs, URIRef(article_data.url), to_literal=False)
 
     if article_data.manifestation:

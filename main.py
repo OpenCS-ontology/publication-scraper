@@ -61,9 +61,6 @@ def scrape_scpe(scpe_issues_to_scrape):
         if doi_api_response.status_code == HTTPStatus.OK:
             doi_response_paper_model = doi_api_decoder(doi_api_response.content)
         else:
-            logging.warning(
-                f"Response from DOI API not OK: {doi_api_response.status_code}"
-            )
             doi_response_paper_model = None
 
         paper_model = create_paper_model(paper, doi_response_paper_model)
