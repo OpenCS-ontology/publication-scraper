@@ -18,16 +18,19 @@ def convert_to_int(s):
     result = 0
     prev_value = 0
 
-    for numeral in s:
-        value = roman_numerals.get(numeral, 0)
-        if value == 0:
-            return "Invalid Roman numeral"
+    try:
+        for numeral in s:
+            value = roman_numerals.get(numeral, 0)
+            if value == 0:
+                return 0
 
-        if value > prev_value:
-            result += value - 2 * prev_value
-        else:
-            result += value
-        prev_value = value
+            if value > prev_value:
+                result += value - 2 * prev_value
+            else:
+                result += value
+            prev_value = value
+    except:
+        return 0
 
     return result
 
@@ -83,6 +86,10 @@ def create_paper_basic_model(
     :return: Basic paper model object.
     """
 
+    starting_page=convert_to_int(scraper_paper.fallback_starting_page)
+    ending_page=convert_to_int(scraper_paper.fallback_ending_page)
+    
+
     result_authors: List[model.AuthorModel] = []
     for scraper_author in scraper_paper.authors:
         result_authors.append(create_author_model(scraper_author, None))
@@ -92,19 +99,18 @@ def create_paper_basic_model(
         authors=set(result_authors),
         date_created=scraper_paper.fallback_created,
         doi=scraper_paper.doi,
-        endingPage=convert_to_int(scraper_paper.fallback_ending_page),
+        endingPage=ending_page,
         keywords=None
         if scraper_paper.keywords is None
         else set(scraper_paper.keywords),
         pdf_url=scraper_paper.pdf_url,
-        startingPage=convert_to_int(scraper_paper.fallback_starting_page),
+        startingPage=starting_page,
         title=scraper_paper.fallback_title,
         url=scraper_paper.url,
         volume=scraper_paper.fallback_volume,
         paper_type="JournalArticle",
         page_count=str(
-            convert_to_int(scraper_paper.fallback_ending_page)
-            - convert_to_int(scraper_paper.fallback_starting_page)
+            max(ending_page - starting_page, 0)
         )
         if scraper_paper.fallback_ending_page is not None
         and scraper_paper.fallback_starting_page is not None
