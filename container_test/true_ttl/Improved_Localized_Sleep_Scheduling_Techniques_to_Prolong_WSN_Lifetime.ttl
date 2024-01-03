@@ -27,10 +27,10 @@
     frbr:realization :Journal_Article_49fe570f4 .
 
 :Journal_Article_49fe570f4 a fabio:JournalArticle ;
+    prism:doi "10.12694/scpe.v22i1.1847"^^xsd:anyURI ;
     prism:endingPage 92 ;
     prism:pageCount 11 ;
     prism:startingPage 81 ;
-    datacite:doi "10.12694/scpe.v22i1.1847"^^xsd:anyURI ;
     fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/1847"^^xsd:anyURI ;
     frbr:partOf :Journal_Issue_156669b1b ;
     owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/1847> .

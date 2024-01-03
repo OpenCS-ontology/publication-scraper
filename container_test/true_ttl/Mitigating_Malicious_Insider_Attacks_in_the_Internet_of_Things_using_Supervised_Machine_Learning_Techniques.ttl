@@ -26,10 +26,10 @@
     frbr:realization :Journal_Article_63c055a22 .
 
 :Journal_Article_63c055a22 a fabio:JournalArticle ;
+    prism:doi "10.12694/scpe.v22i1.1818"^^xsd:anyURI ;
     prism:endingPage 28 ;
     prism:pageCount 15 ;
     prism:startingPage 13 ;
-    datacite:doi "10.12694/scpe.v22i1.1818"^^xsd:anyURI ;
     fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/1818"^^xsd:anyURI ;
     frbr:partOf :Journal_Issue_fa611dbe2 ;
     owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/1818> .

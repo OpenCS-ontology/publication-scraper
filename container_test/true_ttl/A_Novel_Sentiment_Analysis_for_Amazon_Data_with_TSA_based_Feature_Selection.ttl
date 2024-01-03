@@ -29,10 +29,10 @@
     frbr:part :Journal_Volume_c81ac792f .
 
 :Journal_Article_127fb1516 a fabio:JournalArticle ;
+    prism:doi "10.12694/scpe.v22i1.1839"^^xsd:anyURI ;
     prism:endingPage 66 ;
     prism:pageCount 13 ;
     prism:startingPage 53 ;
-    datacite:doi "10.12694/scpe.v22i1.1839"^^xsd:anyURI ;
     fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/1839"^^xsd:anyURI ;
     frbr:partOf :Journal_Issue_826957961 ;
     owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/1839> .

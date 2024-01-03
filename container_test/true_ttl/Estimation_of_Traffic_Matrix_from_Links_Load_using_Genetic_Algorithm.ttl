@@ -31,10 +31,10 @@
     frbr:part :Journal_Volume_fbb9d73c2 .
 
 :Journal_Article_482025a14 a fabio:JournalArticle ;
+    prism:doi "10.12694/scpe.v22i1.1834"^^xsd:anyURI ;
     prism:endingPage 38 ;
     prism:pageCount 9 ;
     prism:startingPage 29 ;
-    datacite:doi "10.12694/scpe.v22i1.1834"^^xsd:anyURI ;
     fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/1834"^^xsd:anyURI ;
     frbr:partOf :Journal_Issue_093a01064 ;
     owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/1834> .

@@ -18,11 +18,11 @@
     frbr:realization :Conference_Paper_641201be4 .
 
 :Conference_Paper_641201be4 a fabio:ConferencePaper ;
+    prism:doi "http://dx.doi.org/10.15439/2015F371"^^xsd:anyURI ;
     prism:pageCount 8 ;
     prism:publicationDate "2015-10-11"^^xsd:date ;
     dc:language "en-US"^^xsd:string ;
     dc:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-    datacite:doi "http://dx.doi.org/10.15439/2015F371"^^xsd:anyURI ;
     fabio:hasURL "https://annals-csis.org/Volume_7/drp/371.html"^^xsd:anyURI ;
     frbr:partOf :Conference_Proceedings_076c456b8 ;
     owl:sameAs <https://annals-csis.org/Volume_7/drp/371.html> .

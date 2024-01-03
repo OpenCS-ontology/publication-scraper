@@ -24,10 +24,10 @@
     frbr:realization :Journal_Article_e64608e3f .
 
 :Journal_Article_e64608e3f a fabio:JournalArticle ;
+    prism:doi "10.12694/scpe.v22i1.1840"^^xsd:anyURI ;
     prism:endingPage 79 ;
     prism:pageCount 12 ;
     prism:startingPage 67 ;
-    datacite:doi "10.12694/scpe.v22i1.1840"^^xsd:anyURI ;
     fabio:hasURL "https://www.scpe.org/index.php/scpe/article/view/1840"^^xsd:anyURI ;
     frbr:partOf :Journal_Issue_9f388eac8 ;
     owl:sameAs <https://www.scpe.org/index.php/scpe/article/view/1840> .
