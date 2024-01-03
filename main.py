@@ -75,9 +75,11 @@ def scrape_scpe(scpe_issues_to_scrape):
             os.makedirs(ttl_dir)
 
         ttl_filename = prepare_ttl_path(ttl_dir, article)
-
-        with open(ttl_filename, "w") as file:
-            file.write(g)
+        try:
+            with open(ttl_filename, "w") as file:
+                file.write(g)
+        except:
+            pass
     print("Process succeded")
 
 

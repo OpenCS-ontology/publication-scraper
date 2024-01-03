@@ -119,7 +119,8 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         )
         if author.affiliations:
             for j, affiliation in enumerate(author.affiliations):
-                role = URIRef(bn + f"role_{gen_hash(author.name+affiliation.name)}")
+                affiliation_name = '' if not affiliation.name else affiliation.name
+                role = URIRef(bn + f"role_{gen_hash(author.name + affiliation_name)}")
                 add_to_graph(g, author_, pro.holdsRoleInTime, role, to_literal=False)
                 add_to_graph(g, role, RDF.type, pro.RoleInTime, to_literal=False)
                 add_to_graph(g, role, pro.withRole, pro.author, to_literal=False)
@@ -139,13 +140,13 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     add_to_graph(g, paper, RDF.type, fabio.ResearchPaper, to_literal=False)
     add_to_graph(g, paper, dc.title, article_data.title, datatype=XSD.string)
 
-    if not article_data.doi:
-        doi = ''
-    else:
-        doi = article_data.doi
+    doi = '' if not article_data.doi else article_data.doi
 
-    if article_data.date_created:
-        add_to_graph(g, paper, dc.created, article_data.date_created, datatype=XSD.date)
+    article_url = '' if not article_data.url else article_data.url
+
+    article_volume = '' if not article_data.volume else article_data.volume
+
+    add_to_graph(g, paper, dc.created, article_data.date_created, datatype=XSD.date)
 
     if article_data.keywords:
         for keyword in article_data.keywords:
@@ -173,14 +174,14 @@ def convert_paper_model_to_graph(article_data: PaperModel):
         add_to_graph(g, article, frbr.partOf, issue, to_literal=False)
 
         volume = URIRef(
-            bn + f"Journal_Volume_{gen_hash(article_data.url+article_data.volume)}"
+            bn + f"Journal_Volume_{gen_hash(article_url+article_volume)}"
         )
         add_to_graph(g, volume, RDF.type, fabio.JournalVolume, to_literal=False)
         add_to_graph(g, volume, prism.volume, article_data.volume, datatype=XSD.integer)
         add_to_graph(g, issue, frbr.partOf, volume, to_literal=False)
         add_to_graph(g, volume, frbr.part, issue, to_literal=False)
 
-        journal = URIRef(bn + f"Journal_{gen_hash(article_data.url)}")
+        journal = URIRef(bn + f"Journal_{gen_hash(article_url)}")
         add_to_graph(g, journal, RDF.type, fabio.Journal, to_literal=False)
         if article_data.journal:
             add_to_graph(
@@ -217,35 +218,29 @@ def convert_paper_model_to_graph(article_data: PaperModel):
             language = article_data.language
         add_to_graph(g, article, dc.language, language, datatype=XSD.string)
 
-    if article_data.license:
-        add_to_graph(g, article, dc.license, article_data.license, datatype=XSD.anyURI)
+    add_to_graph(g, article, dc.license, article_data.license, datatype=XSD.anyURI)
 
     add_to_graph(g, article, fabio.hasURL, article_data.url, datatype=XSD.anyURI)
 
-    if doi != '':
-        add_to_graph(g, article, prism.doi, doi, datatype=XSD.anyURI)
+    add_to_graph(g, article, prism.doi, article_data.doi, datatype=XSD.anyURI)
 
-    if article_data.publication_date:
-        add_to_graph(
-            g,
-            article,
-            prism.publicationDate,
-            article_data.publication_date,
-            datatype=XSD.date,
-        )
+    add_to_graph(
+        g,
+        article,
+        prism.publicationDate,
+        article_data.publication_date,
+        datatype=XSD.date,
+    )
 
-    if article_data.startingPage:
-        add_to_graph(
-            g, article, prism.startingPage, article_data.startingPage, XSD.integer
-        )
+    add_to_graph(
+        g, article, prism.startingPage, article_data.startingPage, XSD.integer
+    )
 
-    if article_data.endingPage:
-        add_to_graph(g, article, prism.endingPage, article_data.endingPage, XSD.integer)
+    add_to_graph(g, article, prism.endingPage, article_data.endingPage, XSD.integer)
 
-    if article_data.page_count:
-        add_to_graph(
-            g, article, prism.pageCount, article_data.page_count, datatype=XSD.integer
-        )
+    add_to_graph(
+        g, article, prism.pageCount, article_data.page_count, datatype=XSD.integer
+    )
     
     add_to_graph(g, article, owl.sameAs, URIRef(article_data.url), to_literal=False)
 

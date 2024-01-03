@@ -269,7 +269,7 @@ def scrape_paper(
     scraped_article_info.append(scraped)
 
 
-    if scraped.pdf_url:
+    try:
         response = requests.get(scraped.pdf_url)
         pdf_dir = f"./output/pdfs/scpe/volume_{scraped.fallback_volume}"
         pdf_filename = scraped.fallback_title.replace(" ", "_") + ".pdf"
@@ -278,3 +278,6 @@ def scrape_paper(
             os.mkdir(pdf_dir)
         with open(os.path.join(pdf_dir, pdf_filename), "wb") as f:
             f.write(response.content)
+    except:
+        pass
+
