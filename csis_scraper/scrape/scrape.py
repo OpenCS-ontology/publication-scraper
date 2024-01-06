@@ -612,8 +612,8 @@ class DriverWrapper(_DriverWrapper):
             for author in author:
                 authors_classed.append(
                     AuthorModel(
-                        given_name=author["given"],
-                        family_name=author["family"],
+                        given_name=author.get("given", ""),
+                        family_name=author.get("family", ""),
                     )
                 )
 

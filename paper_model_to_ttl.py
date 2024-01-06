@@ -140,11 +140,11 @@ def convert_paper_model_to_graph(article_data: PaperModel):
     add_to_graph(g, paper, RDF.type, fabio.ResearchPaper, to_literal=False)
     add_to_graph(g, paper, dc.title, article_data.title, datatype=XSD.string)
 
-    doi = '' if not article_data.doi else article_data.doi
+    doi = article_data.doi if article_data.doi else ''
 
-    article_url = '' if not article_data.url else article_data.url
+    article_url = article_data.url if article_data.url else ''
 
-    article_volume = '' if not article_data.volume else article_data.volume
+    article_volume = article_data.volume if article_data.volume else ''
 
     add_to_graph(g, paper, dc.created, article_data.date_created, datatype=XSD.date)
 
@@ -154,11 +154,13 @@ def convert_paper_model_to_graph(article_data: PaperModel):
 
     desc = BNode()
     add_to_graph(g, paper, datacite.hasDescription, desc, to_literal=False)
+
+    abstract_text = article_data.abstract_text if article_data.abstract_text else ''
     add_to_graph(
         g,
         desc,
         literal.hasLiteralValue,
-        article_data.abstract_text,
+        abstract_text,
         datatype=XSD.string,
     )
     add_to_graph(
